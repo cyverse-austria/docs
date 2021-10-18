@@ -12,9 +12,12 @@ edit_uri: ""
 # Copyright
 copyright: 'Copyright &copy; 2020-2021 Graz University of Technology'
 
-# logo width
-imgwidth: 70px;
+# logos
+medunilogo: 'images/logo-meduni-graz.png'
+unigrazlogo: 'images/universitaet_graz_logo_signet.png'
+tugrazlogo: 'images/TUG.png'
 
+imgwidth: 70px;
 theme:
   highlightjs: true
   features:
