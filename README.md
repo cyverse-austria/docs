@@ -1,2 +1,0 @@
-# docs
-Cyverse Austria documentation
