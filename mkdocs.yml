@@ -1,0 +1,59 @@
+
+site_name: CyVerse Austria Documentation
+site_url: https://cyverse-austria.github.io/docs
+site_description: CyVerse Austria Documentation
+site_author: 'Mojib Wali'
+
+# uncomment to show the github icon in the header with
+# number of forks & stars
+# repo_url: https://github.com/cyverse-austria/docs
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2020-2021 Graz University of Technology'
+
+# logos
+medunilogo: '/images/logo-meduni-graz.svg'
+unigrazlogo: '/images/uni_graz_logo_signet.svg'
+tugrazlogo: 'images/TUG.png'
+
+imgwidth: 70px;
+theme:
+  highlightjs: true
+  features:
+    - navigation.tabs
+  name: material
+  custom_dir: 'overrides'
+  palette:
+    primary: 'white'
+  font:
+    text: 'Open Sans'
+    code: 'Roboto Mono'
+  logo: 'images/cyverse.png'
+  favicon: 'images/favicon.ico'
+
+
+nav:
+  - Home: 'index.md'
+  - Development:
+    - overview: 'development/index.md'
+  - Services:
+    - overview: 'services/index.md'
+
+
+
+# Customization
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: 'https://github.com/cyverse-austria/docs'
+extra_css:
+  - stylesheets/custom.css
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
