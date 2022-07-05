@@ -23,9 +23,9 @@ body {
     padding-top: 0.3rem;
 }
 
-.md-header-nav__button.md-logo img, .md-header-nav__button.md-logo svg {
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
     width: 110px;
-    height: 35px;
+    height: 35px; 
 }
 
 .md-typeset a:hover,
