@@ -35,10 +35,13 @@ theme:
 
 nav:
   - Home: 'index.md'
-  - Development:
-    - overview: 'development/index.md'
-  - Services:
-    - overview: 'services/index.md'
+  # - Development:
+  #   - overview: 'development/index.md'
+  - Kubernetes:
+    - Services: 'services/kubernetes/index.md'
+    - Namespaces: 'services/kubernetes/ns.md'
+
+
 
 
 
