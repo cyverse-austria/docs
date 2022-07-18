@@ -13,6 +13,9 @@ This namespace is dedicated to the [core services](index.md#list-of-core-service
 * redis-haproxy
 * elasticsearch
 
+Except the **irods-csi-driver** which runs in a specific namespace.
+
+
 ## ingress-nginx
 
 This namespace is dedicated to the [ingress-nginx](https://docs.nginx.com/nginx-ingress-controller/) deployment.

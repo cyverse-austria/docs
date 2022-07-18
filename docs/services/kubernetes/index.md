@@ -54,13 +54,12 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 46. [vice-default-backend](https://github.com/cyverse-de/vice-default-backend) : Provides a default backend handler for the Kubernetes Ingress that handles routing for VICE apps. This backend decides whether to redirect requests to the loading page service, the landing page service, or to a 404 page depending on whether the URL is valid or not.
 47. [qms-adapter](https://github.com/cyverse-de/qms-adapter) : Forwards usage information gathered within the Discovery Environment to the Quota Management System [QMS](https://github.com/cyverse/QMS).
 48. [qms](https://github.com/cyverse/QMS) : QMS is the CyVerse Quota Management System. Its purpose is to keep track of resource usage limits and totals for CyVerse users.
-
+49. [irods-csi-driver](https://github.com/cyverse/irods-csi-driver) : iRODS Container Storage Interface (CSI) Driver implements the [CSI Specification](https://github.com/container-storage-interface/spec/blob/master/spec.md) to provide container orchestration engines (like Kubernetes) iRODS access.
 
 ## List of non-core services
 
 1. redis-ha
 2. redis-haproxy
 3. elasticsearch
-4. irods-csi-driver
 5. keycloak
 6. openebs
