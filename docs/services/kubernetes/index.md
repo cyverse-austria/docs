@@ -15,7 +15,8 @@
 9. [dashboard-aggregator](https://github.com/cyverse-de/dashboard-aggregator) : Gathers data to populate the dashboard in Sonora.
 10. [data-info](https://github.com/cyverse-de/data-info) : data-info is a RESTful frontend for getting information about and manipulating information in an iRODS data store.
 11. [data-usage-api](https://github.com/cyverse-de/data-usage-api) : A service that provides an API around data usage tracking, and updates data usage numbers on request or periodically.
-12. ~~[de-mailer](https://github.com/cyverse-de/de-mailer) :  A go module that send email notifications to users. This module will support HTML and rich text emails.~~
+12. <del>[de-mailer](https://github.com/cyverse-de/de-mailer) :  A go module that send email notifications to users. This module will support HTML and rich text emails.</del>
+
 13. de-nginx
 14. [de-stats](https://github.com/cyverse-de/de-stats) : Service for obtaining CyVerse Discovery Environment stats and metrics.
 15. [de-webhooks](https://github.com/cyverse-de/de-webhooks) : A service that listens to AMQP queues for DE notifications, check if the user has webhooks defined for that notification type and then post the notification to webhook if one is defined.
