@@ -3,6 +3,8 @@
 List of namespaces used for CyVerse deployment in kubernetes.
 **Note**: this documentation is relavant only for single/current environment.
 
+![Namespaces](../assets/namespaces.png)
+
 ## prod
 This namespace is dedicated to the [core services](index.md) & some of non-core services such as : 
 * redis-ha
