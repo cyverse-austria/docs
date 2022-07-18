@@ -43,7 +43,15 @@ nav:
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
   - Databases:
-    - DE Database: 'database/main.md'
+    - Databases: 'database/main.md'
+    - DE Database: 'database/de-db.md'
+    - Metadata Database: 'database/metadata-db.md'
+    - Keycloak Database: 'database/keycloak-db.md'
+    - Notifications Database: 'database/notifications-db.md'
+    - Unleash Database: 'database/unleash-db.md'
+    - Grouper Database: 'database/grouper-db.md'
+    - QMS Database: 'database/qms-db.md'
+    - Portal Database: 'database/portal-db.md'
 
 
 

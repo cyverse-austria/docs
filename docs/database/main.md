@@ -1,18 +1,19 @@
-# DE Database
+# Databases
+
 CyVerse is using [PostgreSQL](https://www.postgresql.org/) as its database.
 
-Current deployment of CyVerse Austria has a single virtual machine which hosts a [PostgreSQL](https://www.postgresql.org/) database.
+Current deployment of CyVerse Austria has a **VM** `cy-db01.tugraz.at`, which hosts a [PostgreSQL](https://www.postgresql.org/) database.
 
 **This database is used for multiple services such as:**
 
-* keycloak
-* de
-* notifications
-* metadata
-* unleash
-* grouper
-* qms
-* portal
+* [de](de-db.md)
+* [notifications](notifications-db.md)
+* [metadata](metadata-db.md)
+* [unleash](unleash-db.md)
+* [grouper](grouper-db.md)
+* [qms](qms-db.md)
+* [portal](portal-db.md)
+* [keycloak](keycloak-db.md)
 
 **NOTE: permissions database has been merged with DE database.**
 
@@ -60,49 +61,7 @@ listen_addresses = '*'          # what IP address(es) to listen on;
 
 **TODO:**
 
-## Initialize databases
-
-## Create databases
-
-**Access the vm**
-```bash
-# ssh root@cy-db01.tugraz.at
-psql -U postgres
-```
-
-**create the required database with users**
-
-```bash
-# create de user
-create user de with password '********';
-
-# create de database
-create database de with owner de;
-
-# create notifications database with de owner
-create database notifications with owner de;
-
-# create metadata database with de owner
-create database metadata with owner de;
-
-# create unleash database and user
-## create unleash user
-create user unleash with password '********';
-## create unleash databased
-create database unleash with owner unleash;
-
-# create grouper database and user
-## create grouper user
-create user grouper with password '********';
-## create grouper database
-create database grouper with owner grouper;
-
-# create database qms with de user
-create database qms with owner de;
-
-# TODO create other databases
-# 1. portal  # https://gitlab.com/cyverse/portal2#setup-database
-```
+### Databases and its Users
 
 | DATABASE | USER |
 |------|----------|
@@ -114,52 +73,4 @@ create database qms with owner de;
 |  portal  |  portal    |
 |  keycloak |    keycloak |
 |  qms |    de |
-
-
-## Add required extensions for databases
-
-```bash
-# psql -U postgres
-# \c de
-# \c notifications
-# \c metadata
-# \c unleash
-# \c grouper
-create extension "uuid-ossp";
-create extension "moddatetime";
-create extension "btree_gist";
-
-# \c qms
-create extension "uuid-ossp";
-create extension "moddatetime";
-create extension "btree_gist";
-create extension "insert_username";
-```
-
-## Populate Databases
-**TODO**
-
-### de Database
-**TODO**
-
-### notification Database
-**TODO**
-
-### metadata Database
-**TODO**
-
-### grouper Database
-**TODO**
-
-### unleash Database
-This database does not requires populate, on first connection the required tables are created manully.
-
-### keycloak Database
-This database does not requires populate, on first connection the required tables are created manully.
-
-### portal Database
-**TODO:**
-
-### qms Database
-**TODO:**
 
