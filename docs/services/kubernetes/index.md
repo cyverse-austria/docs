@@ -15,7 +15,7 @@
 9. [dashboard-aggregator](https://github.com/cyverse-de/dashboard-aggregator) : Gathers data to populate the dashboard in Sonora.
 10. [data-info](https://github.com/cyverse-de/data-info) : data-info is a RESTful frontend for getting information about and manipulating information in an iRODS data store.
 11. [data-usage-api](https://github.com/cyverse-de/data-usage-api) : A service that provides an API around data usage tracking, and updates data usage numbers on request or periodically.
-12. [de-mailer](https://github.com/cyverse-de/de-mailer) :  A go module that send email notifications to users. This module will support HTML and rich text emails.
+12. ~~[de-mailer](https://github.com/cyverse-de/de-mailer) :  A go module that send email notifications to users. This module will support HTML and rich text emails.~~
 13. de-nginx
 14. [de-stats](https://github.com/cyverse-de/de-stats) : Service for obtaining CyVerse Discovery Environment stats and metrics.
 15. [de-webhooks](https://github.com/cyverse-de/de-webhooks) : A service that listens to AMQP queues for DE notifications, check if the user has webhooks defined for that notification type and then post the notification to webhook if one is defined.
@@ -50,17 +50,20 @@
 44. [unleash]() : TODO: FIND the repo.
 45. [user-info](https://github.com/cyverse-de/user-info) : A service for getting user-related information like sessions and preferences.
 46. [vice-default-backend](https://github.com/cyverse-de/vice-default-backend) : Provides a default backend handler for the Kubernetes Ingress that handles routing for VICE apps. This backend decides whether to redirect requests to the loading page service, the landing page service, or to a 404 page depending on whether the URL is valid or not.
+47. [qms-adapter](https://github.com/cyverse-de/qms-adapter) : Forwards usage information gathered within the Discovery Environment to the Quota Management System [QMS](https://github.com/cyverse/QMS).
+48. [qms](https://github.com/cyverse/QMS) : QMS is the CyVerse Quota Management System. Its purpose is to keep track of resource usage limits and totals for CyVerse users.
+
 
 ## List of non-core services running on kubernetes
 
 **Prod Namespace**
 
-47. redis-ha
-48. redis-haproxy
-49. elasticsearch
+1. redis-ha
+2. redis-haproxy
+3. elasticsearch
 
 **Different Namespaces**
 
-50. irods-csi-driver
-51. keycloak
-52. openebs (not a service - storage)
+1. irods-csi-driver
+2. keycloak
+3. openebs (not a service - storage)
