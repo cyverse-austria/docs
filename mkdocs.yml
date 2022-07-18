@@ -40,7 +40,8 @@ nav:
   - Kubernetes:
     - Services: 'services/kubernetes/index.md'
     - Namespaces: 'services/kubernetes/ns.md'
-
+  - Deployments:
+    - Kubernetes: 'deployments/kubernetes-deploy.md'
 
 
 
