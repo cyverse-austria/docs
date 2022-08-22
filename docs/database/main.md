@@ -2,7 +2,7 @@
 
 CyVerse is using [PostgreSQL](https://www.postgresql.org/) as its database.
 
-Current deployment of CyVerse Austria has a **VM** `cy-db01.tugraz.at`, which hosts a [PostgreSQL](https://www.postgresql.org/) database.
+Current deployment of CyVerse Austria has a **VM** `DB_HOST.com`, which hosts a [PostgreSQL](https://www.postgresql.org/) database.
 
 **This database is used for multiple services such as:**
 
@@ -18,7 +18,7 @@ Current deployment of CyVerse Austria has a **VM** `cy-db01.tugraz.at`, which ho
 **NOTE: permissions database has been merged with DE database.**
 
 ## Install
-The installation of this database is manully done on the host `cy-db01.tugraz.at'`.
+The installation of this database is manully done on the host `DB_HOST.com'`.
 See documentation on [how to install postgresql?](https://www.postgresguide.com/setup/install/)
 
 **Here is some commands that we have used to install postgresql 12 on a Centos7 vm**

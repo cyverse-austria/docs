@@ -7,7 +7,7 @@ This Database is used for CyVerse User portal Service.
 ### Access Database
 
 ```bash
-ssh root@cy-db01.tugraz.at
+ssh root@DB_HOST.com
 psql -U postgres
 ```
 

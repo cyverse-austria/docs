@@ -7,7 +7,7 @@ This Database is used for CyVerse Unleash service.
 ### Access vm
 
 ```bash
-ssh root@cy-db01.tugraz.at
+ssh root@DB_HOST.com
 ```
 
 ### Create required Database and User
