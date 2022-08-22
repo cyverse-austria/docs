@@ -19,7 +19,7 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 12. <del>[de-mailer](https://github.com/cyverse-de/de-mailer) :  A go module that send email notifications to users. This module will support HTML and rich text emails.</del>
 
 13. de-nginx
-14. [de-stats](https://github.com/cyverse-de/de-stats) : Service for obtaining CyVerse Discovery Environment stats and metrics.
+14. <del>[de-stats](https://github.com/cyverse-de/de-stats) : Service for obtaining CyVerse Discovery Environment stats and metrics.</del>
 15. [de-webhooks](https://github.com/cyverse-de/de-webhooks) : A service that listens to AMQP queues for DE notifications, check if the user has webhooks defined for that notification type and then post the notification to webhook if one is defined.
 16. [dewey](https://github.com/cyverse-de/dewey) : An AMQP message based iRODS indexer for elasticsearch.
 17. [email-requests](https://github.com/cyverse-de/email-requests) : A simple service to wait for email requests to arrive over AMQP and forward them to cyverse-email.
@@ -43,7 +43,7 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 35. [requests](https://github.com/cyverse-de/requests) : Service for managing administrative requests in the CyVerse Discovery Environment.
 36. [terrain](https://github.com/cyverse-de/terrain) : Terrain provides the primary REST API used by the Discovery Environment. Its role is to validate user authentication and to coordinate calls to other web services. For more information, please see the [Discovery Environment API Documentation](https://cyverse-de.github.io/api/).
 37. [resource-usage-api](https://github.com/cyverse-de/resource-usage-api) :  is a microservice developed as part of the CyVerse Discovery Environment that provides access to resource usage values (CPU hours, memory, etc.) consumed by users over a customizable time period.
-38. [saved-searches](https://github.com/cyverse-de/saved-searches) : A service for the CyVerse Discovery Environment that provides CRUD access to a user's saved searches.
+38. <del>[saved-searches](https://github.com/cyverse-de/saved-searches) : A service for the CyVerse Discovery Environment that provides CRUD access to a user's saved searches.</del>
 39. [search](https://github.com/cyverse-de/search) : This is a service which serves as a search facade for the DE and others to use. It uses the querydsl library under the covers to translate requests and provide documentation, then passes off queries to configured elasticsearch servers.
 40. [sonora](https://github.com/cyverse-de/sonora) : UI for the Discovery Environment
 41. [templeton-incremental]() : TODO: FIND the repo.
@@ -55,6 +55,7 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 47. [qms-adapter](https://github.com/cyverse-de/qms-adapter) : Forwards usage information gathered within the Discovery Environment to the Quota Management System [QMS](https://github.com/cyverse/QMS).
 48. [qms](https://github.com/cyverse/QMS) : QMS is the CyVerse Quota Management System. Its purpose is to keep track of resource usage limits and totals for CyVerse users.
 49. [irods-csi-driver](https://github.com/cyverse/irods-csi-driver) : iRODS Container Storage Interface (CSI) Driver implements the [CSI Specification](https://github.com/container-storage-interface/spec/blob/master/spec.md) to provide container orchestration engines (like Kubernetes) iRODS access.
+50. <del>[dataone-indexer](https://github.com/cyverse-de/dataone-indexer) : Event indexer for the DataONE member node service.</del>
 
 ## List of non-core services
 
