@@ -2,9 +2,7 @@
 
 CyVerse is using [PostgreSQL](https://www.postgresql.org/) as its database.
 
-Current deployment of CyVerse Austria has a **VM** `DB_HOST.com`, which hosts a [PostgreSQL](https://www.postgresql.org/) database.
-
-**This database is used for multiple services such as:**
+**This database dedicated to the *discovery environment* of Cyverse, which is used for multiple services such as:**
 
 * [de](de-db.md)
 * [notifications](notifications-db.md)
@@ -21,7 +19,7 @@ Current deployment of CyVerse Austria has a **VM** `DB_HOST.com`, which hosts a 
 The installation of this database is manully done on the host `DB_HOST.com'`.
 See documentation on [how to install postgresql?](https://www.postgresguide.com/setup/install/)
 
-**Here is some commands that we have used to install postgresql 12 on a Centos7 vm**
+**Installing postgresql 12 on Centos7**
 
 ```bash
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
@@ -38,7 +36,8 @@ On this paragraph  we will cover first and necessary steps to configure the data
 
 ### ~postgres/12/data/pg_hba.conf
 
-**# IPv4 local connections:**
+**IPv4 local connections:**
+
 Add IP or IP range of kubernetes worker node, that requires connection to this database.
 
 | TYPE | DATABASE | USER | ADDRESS | METHOD |
