@@ -30,17 +30,59 @@ GRANT postgres TO portal_db_reader;
 For this we have to download [portal.sql](https://gitlab.com/cyverse/portal2/-/blob/master/portal.sql) file.
 
 ```bash
-# restor to user portal_db_reader and database portal
+# restore to user portal_db_reader and database portal
 psql -U portal_db_reader -d portal -f portal.sql
 ```
 
-### Populate Database (PENDING)
-We need to populate this database, with:
-* GRID
-* required Tables
+### Populate Database
 
+#### make sure session Table exist
 
-**TODO**
+```bash
+CREATE TABLE public.session (
+    sid character varying NOT NULL,
+    sess json NOT NULL,
+    expire timestamp(6) without time zone NOT NULL
+);
+ALTER TABLE public.session OWNER TO portal;
+CREATE INDEX "IDX_session_expire" ON public.session USING btree (expire);
+```
+
+#### Import GRID institutions
+
+##### download required grid file
+
+[Official website](https://digitalscience.figshare.com/articles/dataset/GRID_release_2021-09-16/16685428?backTo=/collections/GRID/3812929)
+
+```bash
+# download grid
+wget https://digitalscience.figshare.com/ndownloader/files/30895309
+
+# unzip
+unzip 30895309
+```
+
+##### import to the database
+For imorting this grid file we will use the script from [portal2/scripts/import_grid_institutions.py](https://gitlab.com/cyverse/portal2/-/blob/master/src/scripts/import_grid_institutions.py).
+
+```bash
+./import_grid_institutions.py --host root@DB_HOST.com --user portal_db_reader --database portal grid.csv
+```
+
+#### Populate these Tables
+**These sql files are not yet public avalible.**
+```bash
+psql -U portal_db_reader -d portal -f ./account_country.sql
+psql -U portal_db_reader -d portal -f ./account_region.sql
+psql -U portal_db_reader -d portal -f ./account_gender.sql
+psql -U portal_db_reader -d portal -f ./account_occupation.sql
+psql -U portal_db_reader -d portal -f ./account_ethnicity.sql
+psql -U portal_db_reader -d portal -f ./account_fundingagency.sql
+psql -U portal_db_reader -d portal -f ./account_awarechannel.sql
+
+# MISSING
+# account_researcharea
+```
 
 ### Migrate Database
 
