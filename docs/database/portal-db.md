@@ -79,9 +79,7 @@ psql -U portal_db_reader -d portal -f ./account_occupation.sql
 psql -U portal_db_reader -d portal -f ./account_ethnicity.sql
 psql -U portal_db_reader -d portal -f ./account_fundingagency.sql
 psql -U portal_db_reader -d portal -f ./account_awarechannel.sql
-
-# MISSING
-# account_researcharea
+psql -U portal_db_reader -d portal -f ./account_researcharea.sql
 ```
 
 ### Migrate Database
