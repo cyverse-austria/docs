@@ -16,9 +16,10 @@ See also [portal2/setup-database](https://gitlab.com/cyverse/portal2#setup-datab
 
 
 ```bash
-# create portal database and user
+# create user
 create user portal_db_reader with password '********';
-## create portal database
+
+# create portal database with the owner portal_db_reader
 create database portal with owner portal_db_reader;
 
 ## Grant user to member of postgres
@@ -70,7 +71,8 @@ For imorting this grid file we will use the script from [portal2/scripts/import_
 ```
 
 #### Populate these Tables
-**These sql files are not yet public avalible.**
+**These sql files can be found [here](https://github.com/cyverse-austria/portal2-db)**.
+
 ```bash
 psql -U portal_db_reader -d portal -f ./account_country.sql
 psql -U portal_db_reader -d portal -f ./account_region.sql
