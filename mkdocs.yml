@@ -39,7 +39,7 @@ nav:
   #   - overview: 'development/index.md'
   - services:
     - kubernetes: 'services/kubernetes/index.md'
-    - keyclock: 'services/keyclock/Reaml.md'
+    - keycloak: 'services/keyclock/Reaml.md'
     - Namespaces: 'services/kubernetes/ns.md'
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
