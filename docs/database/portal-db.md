@@ -84,6 +84,18 @@ psql -U portal_db_reader -d portal -f ./account_awarechannel.sql
 psql -U portal_db_reader -d portal -f ./account_researcharea.sql
 ```
 
-### Migrate Database
+## Extra 
+
+### Give Admin privilege to a user
+
+```sql
+--update is_superuser
+UPDATE account_user SET is_superuser = true WHERE username='USERNAME';
+
+---update is_staff 
+UPDATE account_user SET is_staff = true WHERE username = 'USERNAME';
+```
+
+## Migrate Database
 
 **TODO**
