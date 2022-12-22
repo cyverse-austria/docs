@@ -93,8 +93,19 @@ psql -U portal_db_reader -d portal -f ./account_researcharea.sql
 UPDATE account_user SET is_superuser = true WHERE username='USERNAME';
 
 ---update is_staff 
-UPDATE account_user SET is_staff = true WHERE username = 'USERNAME';
+UPDATE account_user SET is_staff = true WHERE username='USERNAME';
 ```
+
+### Verify User email
+
+```sql
+-- check if its verified
+select has_verified_email from account_user where username='USERNAME';
+
+--Verify email
+UPDATE account_user SET has_verified_email = true WHERE username='USERNAME';
+```
+
 
 ## Migrate Database
 
