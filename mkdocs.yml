@@ -43,6 +43,7 @@ nav:
     - Namespaces: 'services/kubernetes/ns.md'
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
+    - UserPortal: 'deployments/userportal.md'
   - Databases:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'
