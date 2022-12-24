@@ -1,5 +1,7 @@
 # Kubernetes Cluster 
 
+# TODO rewrite the docs once [ansible-k8s-centos7](https://github.com/cyverse-austria/ansible-k8s-centos7) is ready.
+
 We are using **Ansible** to set up a kubernetes cluster.
 
 Current kubernetes cluster is configured using ansible playbooks from [deployments/ansible/kubernetes](https://github.com/cyverse-de/deployments/tree/main/ansible/kubernetes).
