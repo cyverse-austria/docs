@@ -1,6 +1,6 @@
 # User Portal
 
-## Preq
+## Prerequisites
 
 ### TODO: add source location.
 
@@ -8,8 +8,7 @@
 Setup required ldap user.
 
 #### create portal user
-
-**Create portal-user.ldif**
+##### Create portal-user.ldif
 
 ```ldif
 dn: uid=portal,ou=People,dc=tugraz,dc=at
@@ -29,7 +28,7 @@ gidNumber: 10003
 homeDirectory: /home/portal
 ```
 
-**Apply ldap file**
+##### Apply ldap file
 
 ```bash
 # replace LDAP_PASSWORD 
@@ -42,7 +41,7 @@ ldappasswd -x -D cn=Manager,dc=tugraz,dc=at -w "LDAP_PASSWORD" -s "PORTAL_PASSWO
 
 #### Add portal user to admim group
 
-**Create portal-de_admin.ldif**
+##### Create portal-de_admin.ldif
 
 ```ldif
 dn: cn=de_admins,ou=Groups,dc=tugraz,dc=at
@@ -51,7 +50,7 @@ add: memberUid
 memberUid: portal
 ```
 
-**Apply ldap file**
+##### Apply ldap file
 
 ```bash
 # replace LDAP_PASSWORD
