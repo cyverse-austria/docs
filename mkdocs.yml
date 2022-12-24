@@ -46,7 +46,7 @@ nav:
     - UserPortal: 'deployments/userportal.md'
     - Openebs: 'deployments/openebs.md'
     - Keycloak: 'deployments/keycloak.md'
-
+    - Mail: 'deployments/exim4.md'
   - Databases:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'
@@ -57,7 +57,6 @@ nav:
     - Grouper Database: 'database/grouper-db.md'
     - QMS Database: 'database/qms-db.md'
     - Portal Database: 'database/portal-db.md'
-
 
 
 
