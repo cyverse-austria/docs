@@ -30,3 +30,12 @@ kubectl exec -it exim4-6ff546fb9f-ff47m -- bash
 # send a test mail
 echo "This is test" | mail -s "The subject" mb_wali@hotmail.com -aFrom:sender@myhost.com
 ```
+
+### Usage
+
+Use your deployed exim4 to send mails, 
+e.g. connect from a another service.
+
+```bash
+SMTP_HOST=exim4.mail.svc.cluster.local
+```
