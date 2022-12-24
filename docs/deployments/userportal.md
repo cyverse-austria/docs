@@ -4,6 +4,13 @@
 
 ### TODO: add source location
 
+### Images
+
+1. harbor.cyverse.org/hub/library/nginx:1.20-alpine **Replaced with**:nginx:1.20-alpine
+
+2. mbwali/portal:tug-stable
+    * Todo: tekton should build this via the URL.
+
 ## Deploy
 
 ```bash

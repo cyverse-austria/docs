@@ -44,6 +44,9 @@ nav:
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
     - UserPortal: 'deployments/userportal.md'
+    - Openebs: 'deployments/openebs.md'
+    - Keycloak: 'deployments/keycloak.md'
+
   - Databases:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'
