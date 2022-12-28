@@ -28,7 +28,7 @@ Once the pod is running
 kubectl exec -it exim4-6ff546fb9f-ff47m -- bash
 
 # send a test mail
-echo "This is test" | mail -s "The subject" mb_wali@hotmail.com -aFrom:sender@myhost.com
+echo "This is test" | mail -s "The subject" receiver@myhost.com -aFrom:sender@myhost.com
 ```
 
 ### Usage
