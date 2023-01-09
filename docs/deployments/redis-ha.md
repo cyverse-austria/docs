@@ -1,5 +1,7 @@
 # Redis HA
 
+In this Document we will cover installing the **Redis Server** and **Redis Haproxy**, due to the `k8s-resources` configurations both would be installed and configured inside the **prod** namespace.
+
 ## Preq
 
 Make sure to create a **values.yaml** and replace add your credentials:
@@ -41,14 +43,11 @@ redisPassword: <PASSWORD>
 helm repo add dandydev https://dandydeveloper.github.io/charts
 helm repo update
 
-# create namespace
-kubectl create ns redis-ha
-
 # deploy redis servers
-helm upgrade --install --namespace redis-ha redis-ha dandydev/redis-ha --values values.yaml
+helm upgrade --install --namespace prod redis-ha dandydev/redis-ha --values values.yaml
 
 # uninstall
-## helm uninstall --namespace redis-ha redis-ha
+## helm uninstall --namespace prod redis-ha
 ```
 
 
@@ -60,5 +59,5 @@ helm upgrade --install --namespace redis-ha redis-ha dandydev/redis-ha --values 
 ```bash
 # make sure to load the configs to create service-config secret
 # ./load_configs.py -e discover -n discover
-kubectl apply -n discover -f resources/deployments/redis-haproxy.yml
+kubectl apply -n prod -f resources/deployments/redis-haproxy.yml
 ```
