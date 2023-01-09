@@ -55,3 +55,10 @@ helm upgrade --install --namespace redis-ha redis-ha dandydev/redis-ha --values 
 # Redis Haproxy
 
 ## TODO
+
+**redis-haproxy**
+```bash
+# make sure to load the configs to create service-config secret
+# ./load_configs.py -e discover -n discover
+kubectl apply -n discover -f resources/deployments/redis-haproxy.yml
+```
