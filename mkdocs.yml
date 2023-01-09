@@ -47,6 +47,7 @@ nav:
     - Openebs: 'deployments/openebs.md'
     - Keycloak: 'deployments/keycloak.md'
     - Mail: 'deployments/exim4.md'
+    - Redis HA: 'deployments/redis-ha.md'
   - Databases:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'
