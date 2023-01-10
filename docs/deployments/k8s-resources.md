@@ -9,28 +9,67 @@ git clone git@gitlab.cyverse.org:tugraz/k8s-resources.git
 ```
 
 ## Generate config/secrets for pro env
+
+Make sure [gomplate](https://docs.gomplate.ca/installing/#manual-install) is installed in your OS.
+
+```bash
+# here is an example on ubuntu:
+sudo curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.10.0/gomplate_linux-amd64
+
+sudo chmod 755 /usr/local/bin/gomplate
+
+gomplate --help
+```
+
 ```bash
 ./generate_configs.py -e prod
 ./generate_secrets.py -e prod
 ```
 
 ## Load config/secrets in your cluster for pro env
+
 ```bash
 ./load_configs.py -e prod -n prod
 ./load_secrets.py -e prod -n prod
 ```
 
+## Deploy services
 
-## create a new env
-Currently we have `prod` environment which is our productive instance.
+### preq
+Before we start to deploy the services we need to create these two secrets,
+which will allow our pods to pull images from the registries.
 
-To create new environment take these steps.
+* `vice-image-pull-secret` TODO: kubectl apply.
+* `harbor-registry-credentials` TODO: kubectl apply.
+
+**These secrets below can be deployed using:** `git clone -b discover https://gitlab.cyverse.org/tugraz/docker-tugraz-data` see also [cyverse.at](https://github.com/mb-wali/cyverse.at/tree/main/k8s/discoveryEnvironment) repo.
+
+* `gpg-keys`
+* `ui-nginx-tls`
+* `gpg-keys`
+* `pgpass-files`
+* `signing-keys`
+* `accepted-keys`
+* `ssl-files`
+* Make sure [elasticsearch](elasticsearch.md) is deployed.
+
+#### TODO above
+
+### Deploy
 
 ```bash
-# we will create a new environment call it discover
-cd config_values
-vi discover.yaml
+# deploy services for prod env
+./deploy.py -n prod -BCa
+
+## deploy services for discover env
+./deploy.py -n discover -BCa
 ```
+
+# create a new env
+Currently we have `prod` environment which is our productive instance.
+
+Create your environment: `cp config_values/prod.yaml config_values/discover`
+This will create a new config file for your environment. You will have to update all the values as you see fit for your environment.
 
 **fill in all these values:**
 ```yaml
