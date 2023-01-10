@@ -48,6 +48,7 @@ nav:
     - Keycloak: 'deployments/keycloak.md'
     - Mail: 'deployments/exim4.md'
     - Redis HA: 'deployments/redis-ha.md'
+    - K8s-resources: 'deployments/k8s-resources.md'
   - Databases:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'

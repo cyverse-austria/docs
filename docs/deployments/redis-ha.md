@@ -43,21 +43,27 @@ redisPassword: <PASSWORD>
 helm repo add dandydev https://dandydeveloper.github.io/charts
 helm repo update
 
-# deploy redis servers
+## deploy redis servers for prod env
 helm upgrade --install --namespace prod redis-ha dandydev/redis-ha --values values.yaml
 
-# uninstall
-## helm uninstall --namespace prod redis-ha
+## deploy redis server for discover env
+# helm upgrade --install --namespace discover redis-ha dandydev/redis-ha --values values.yaml
 ```
 
 
 # Redis Haproxy
 
-## TODO
+## Preq
 
-**redis-haproxy**
+* **Make sure to load the configs/secrets** see also [k8s-resources](k8s-resources.md)
+
+## Deploy redis-haproxy
+
+
 ```bash
-# make sure to load the configs to create service-config secret
-# ./load_configs.py -e discover -n discover
+## deploy for prod env
 kubectl apply -n prod -f resources/deployments/redis-haproxy.yml
+
+## deploy for discover env
+# kubectl apply -n discover -f resources/deployments/redis-haproxy.yml
 ```
