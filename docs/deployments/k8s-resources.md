@@ -8,12 +8,13 @@ This repository includes all the manifests and resources for kubernetes deployme
 git clone git@gitlab.cyverse.org:tugraz/k8s-resources.git
 ```
 
-## Generate config/secrets for pro env
+## Generate config/secrets for **prod** env
 
 Make sure [gomplate](https://docs.gomplate.ca/installing/#manual-install) is installed in your OS.
 
+**Here is an example on ubuntu:**
+
 ```bash
-# here is an example on ubuntu:
 sudo curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.10.0/gomplate_linux-amd64
 
 sudo chmod 755 /usr/local/bin/gomplate
@@ -21,12 +22,13 @@ sudo chmod 755 /usr/local/bin/gomplate
 gomplate --help
 ```
 
+**Generate configs/secrets**
 ```bash
 ./generate_configs.py -e prod
 ./generate_secrets.py -e prod
 ```
 
-## Load config/secrets in your cluster for pro env
+## Load config/secrets in your cluster for **prod** env
 
 ```bash
 ./load_configs.py -e prod -n prod
@@ -406,13 +408,13 @@ Jaeger:
   Endpoint:
 ```
 
-## Generate config/secrets for discover env
+## Generate config/secrets for **discover** env
 ```bash
 ./generate_configs.py -e discover
 ./generate_secrets.py -e discover
 ```
 
-## Load config/secrets in your cluster for discover env
+## Load config/secrets in your cluster for **discover** env
 ```bash
 ./load_configs.py -e discover -n discover
 ./load_secrets.py -e discover -n discover
