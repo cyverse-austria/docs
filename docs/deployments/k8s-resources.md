@@ -59,12 +59,14 @@ which will allow our pods to pull images from the registries.
 
 ### Deploy
 
+This command will deploy all the services listed on `k8s-resources/repos`
+
 ```bash
 # deploy services for prod env
 ./deploy.py -n prod -BCa
 
 ## deploy services for discover env
-./deploy.py -n discover -BCa
+# ./deploy.py -n discover -BCa
 ```
 
 # create a new env
