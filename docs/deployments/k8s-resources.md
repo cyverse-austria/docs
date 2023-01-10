@@ -72,7 +72,7 @@ This command will deploy all the services listed on `k8s-resources/repos`
 # create a new env
 Currently we have `prod` environment which is our productive instance.
 
-Create your environment: `cp config_values/prod.yaml config_values/discover`
+Create your environment: `cp config_values/prod.yaml config_values/discover.yaml`
 This will create a new config file for your environment. You will have to update all the values as you see fit for your environment.
 
 **fill in all these values:**
