@@ -50,7 +50,6 @@ helm upgrade --install --namespace prod redis-ha dandydev/redis-ha --values valu
 # helm upgrade --install --namespace discover redis-ha dandydev/redis-ha --values values.yaml
 ```
 
-
 # Redis Haproxy
 
 ## Preq
