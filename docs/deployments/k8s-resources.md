@@ -38,8 +38,8 @@ gomplate --help
 ## Deploy services
 
 ### preq
-Before we start to deploy the services we need to create these two secrets,
-which will allow our pods to pull images from the registries.
+
+Before we start to deploy the services we need to create these secrets, and install some dependencies.
 
 * `vice-image-pull-secret` TODO: kubectl apply.
 * `harbor-registry-credentials` TODO: kubectl apply.
@@ -54,6 +54,16 @@ which will allow our pods to pull images from the registries.
 * `accepted-keys`
 * `ssl-files`
 * Make sure [elasticsearch](elasticsearch.md) is deployed.
+* Make sure [skaffold](https://docs.gomplate.ca/installing/#manual-install) is installed in your OS.
+    ```bash
+    # For Linux x86_64 (amd64)
+    curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+
+    sudo install skaffold /usr/local/bin/
+
+    # check
+    skaffold --help
+    ```
 
 #### TODO above
 
