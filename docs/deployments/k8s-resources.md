@@ -64,6 +64,14 @@ Before we start to deploy the services we need to create these secrets, and inst
     # check
     skaffold --help
     ```
+* Make sure ServiceAccounts are created:
+  ```bash
+  # For prod env
+  kubectl apply -f /k8s-resources/resources/serviceaccounts/app-exposer.yml -n prod
+
+  ## For discover env
+  # kubectl apply -f /k8s-resources/resources/serviceaccounts/app-exposer.yml -n discover
+  ```
 
 #### TODO above
 
