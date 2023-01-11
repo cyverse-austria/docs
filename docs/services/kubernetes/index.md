@@ -11,7 +11,7 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 4. [apps](https://github.com/cyverse-de/apps) : apps is a platform for hosting App Services for the Discovery Environment web application.
 5. [async-tasks](https://github.com/cyverse-de/async-tasks) : This service tracks and manages asynchronous tasks throughout the DE backend services.
 6. [bulk-typer](https://github.com/cyverse-de/bulk-typer) : Like info-typer, but a bunch at once. hopefully.
-7. [check-resources]()  ??
+7. [check-resource-access](https://github.com/cyverse-de/check-resource-access) : Looks up the permissions that a subject has for a resource. By default, the subject type is 'user' and the resource type is 'analysis'. Only performs look ups against the permissions service.
 8. [clockwork](https://github.com/cyverse-de/clockwork) : Scheduled jobs for the CyVerse Discovery Environment.
 9. [dashboard-aggregator](https://github.com/cyverse-de/dashboard-aggregator) : Gathers data to populate the dashboard in Sonora.
 10. [data-info](https://github.com/cyverse-de/data-info) : data-info is a RESTful frontend for getting information about and manipulating information in an iRODS data store.
