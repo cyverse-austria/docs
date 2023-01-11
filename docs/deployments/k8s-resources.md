@@ -95,7 +95,7 @@ If you want to deploy a single service, e.g. `search`
 ./deploy.py -Bn prod -p search -C
 
 ## Run for the discover env
-./deploy.py -Bn discover -p search -C
+# ./deploy.py -Bn discover -p search -C
 ```
 
 # create a new env
