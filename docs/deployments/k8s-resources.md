@@ -87,6 +87,17 @@ This command will deploy all the services listed on `k8s-resources/repos`
 # ./deploy.py -n discover -BCa
 ```
 
+#### Deploy single service
+
+If you want to deploy a single service, e.g. `search`
+```bash
+## Run for the prod env
+./deploy.py -Bn prod -p search -C
+
+## Run for the discover env
+./deploy.py -Bn discover -p search -C
+```
+
 # create a new env
 Currently we have `prod` environment which is our productive instance.
 
