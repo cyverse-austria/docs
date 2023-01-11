@@ -25,8 +25,7 @@ Here you will find all the services which are running on a Kubernetes Cluster.
 17. [email-requests](https://github.com/cyverse-de/email-requests) : A simple service to wait for email requests to arrive over AMQP and forward them to cyverse-email.
 18. [event-recorder](https://github.com/cyverse-de/event-recorder) : This service listens to an AMQP topic for events, and records events that may be of interest to users in the notifications database.
 19. [get-analysis-id]() : TODO: FIND the repo.
-20. [grouper-loader]() : TODO: FIND the repo.   - From kubectl apply
-21. [grouper-ws]() : TODO: FIND the repo.       - from kubectl apply
+20. [grouper]() : - `grouper-loader` & `grouper-ws` TODO: FIND the repo.   - From kubectl apply
 22. [info-typer](https://github.com/cyverse-de/info-typer) : An AMQP message based info type detector
 23. [infosquito2](https://github.com/cyverse-de/infosquito2) : TODO FIND description.
 24. [iplant-groups](https://github.com/cyverse-de/iplant-groups) : A RESTful facade in front of [Grouper](https://incommon.org/software/grouper/).

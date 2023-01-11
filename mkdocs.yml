@@ -51,6 +51,7 @@ nav:
     - K8s-resources: 'deployments/k8s-resources.md'
     - Elasticsearch: 'deployments/elasticsearch.md'
     - RabbitMQ: 'deployments/RabbitMQ.md' # move this since its not k8s
+    - Unleash: 'deployments/unleash.md'
     - Grouper: 'deployments/grouper.md'
     - Irods CSI Driver: 'deployments/irods-csi-driver.md'
     - Local Exim: 'deployments/local-exim.md'
