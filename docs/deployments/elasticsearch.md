@@ -342,3 +342,11 @@ curl -sX PUT "http://elasticsearch:9200/data" -d @settings.json
 ```bash
 curl -sX DELETE "http://elasticsearch:9200/data"
 ```
+
+#### restart related services
+
+```bash
+# kubectl rollout restart statefulset elasticsearch -n prod # not sure
+kubectl rollout restart deployment infosquito2 search -n <NAMESPACE>
+```
+
