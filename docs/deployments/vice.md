@@ -85,3 +85,8 @@ kubectl -n vice-apps create secret generic porklock-config --from-file=irods-con
 ```bash
 kubectl rollout restart apps app-exposer templeton-incremental templeton-periodic -n NAMESPACE
 ```
+
+## Install/configure ingress-nginx
+
+For installing and configuring the **ingress-nginx** have a look at [ingress-nginx](ingress-nginx.md)
+
