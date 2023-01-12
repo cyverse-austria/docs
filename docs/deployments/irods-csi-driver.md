@@ -62,14 +62,27 @@ When we want to upgrade the `irods-csi-driver` to a newer version, we need to st
 helm repo update
 
 # delete the pvc
-kubectl delete pvc -l app-type=interactive
+kubectl delete pvc -l app-type=interactive -n vice-apps
 
 # uninstall the irods-csi-driver
 helm uninstall irods-csi-driver -n irods-csi-driver
 
 # delete all the vice-apps deployments
+## TODO: add this file
 ./nuke-vice-analysis.sh $(kubectl get deployments -n vice-apps -l app-type=interactive -o name)
 
 # install again
 helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f values.yaml
 ```
+
+## install specific version
+```bash
+helm install -n irods-csi-driver irods-csi-driver --version 0.8.7 irods-csi-driver-repo/irods-csi-driver -f values.at.yaml
+
+## try the latest
+helm install -n irods-csi-driver irods-csi-driver --version 0.9.2 irods-csi-driver-repo/irods-csi-driver -f values.at.yaml
+```
+
+## NOTE
+With `irods-csi-driver` **version > 0.8.7**, there’s a small change on the configuration file `user_config.yaml` for driver installation.
+**You will need to delete --cache_root and --temp_root flags if you used it.**
