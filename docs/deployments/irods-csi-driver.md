@@ -77,10 +77,10 @@ helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-cs
 
 ## install specific version
 ```bash
-helm install -n irods-csi-driver irods-csi-driver --version 0.8.7 irods-csi-driver-repo/irods-csi-driver -f values.at.yaml
+helm install -n irods-csi-driver irods-csi-driver --version 0.8.7 irods-csi-driver-repo/irods-csi-driver -f values.yaml
 
 ## try the latest
-helm install -n irods-csi-driver irods-csi-driver --version 0.9.2 irods-csi-driver-repo/irods-csi-driver -f values.at.yaml
+helm install -n irods-csi-driver irods-csi-driver --version 0.9.2 irods-csi-driver-repo/irods-csi-driver -f values.yaml
 ```
 
 ## NOTE
