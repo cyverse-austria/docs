@@ -336,3 +336,9 @@ Inside the running container shell run this command to add the indexes.
 ```bash
 curl -sX PUT "http://elasticsearch:9200/data" -d @settings.json
 ```
+
+#### (optional) delete current indexes
+
+```bash
+curl -sX DELETE "http://elasticsearch:9200/data"
+```
