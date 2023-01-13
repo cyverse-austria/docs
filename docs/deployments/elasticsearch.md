@@ -334,13 +334,21 @@ kubectl -n prod cp settings.json utils:/home/utils
 Inside the running container shell run this command to add the indexes.
 
 ```bash
+# check elasticsearch health
+curl -XGET "http://elasticsearch:9200/_cluster/health?pretty"
+
+# run indexing from file
 curl -sX PUT "http://elasticsearch:9200/data" -d @settings.json
 ```
 
 #### (optional) delete current indexes
 
 ```bash
+# delete data indexes
 curl -sX DELETE "http://elasticsearch:9200/data"
+
+# delete everything
+curl -sX DELETE "http://elasticsearch:9200/*"
 ```
 
 #### restart related services
@@ -349,4 +357,3 @@ curl -sX DELETE "http://elasticsearch:9200/data"
 # kubectl rollout restart statefulset elasticsearch -n prod # not sure
 kubectl rollout restart deployment infosquito2 search -n <NAMESPACE>
 ```
-
