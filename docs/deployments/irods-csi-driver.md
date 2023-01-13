@@ -86,3 +86,28 @@ helm install -n irods-csi-driver irods-csi-driver --version 0.9.2 irods-csi-driv
 ## NOTE
 With `irods-csi-driver` **version > 0.8.7**, there’s a small change on the configuration file `user_config.yaml` for driver installation.
 **You will need to delete --cache_root and --temp_root flags if you used it.**
+
+
+
+# nuke-vice-analysis.sh
+
+```sh
+function delete_resources() {
+    local external_id="$1"
+    kubectl -n vice-apps delete deployment "${external_id}"
+    kubectl -n vice-apps delete service "vice-${external_id}"
+    kubectl -n vice-apps delete ingress "${external_id}"
+    kubectl -n vice-apps delete configmap "excludes-file-${external_id}"
+    kubectl -n vice-apps delete configmap "input-path-list-${external_id}"
+}
+
+function remove_deployment_prefix() {
+    local external_id="$1"
+    echo -n "$external_id" | sed 's;^deployment.apps/;;'
+}
+
+# Iterate over all arguments on the command line.
+for id in "$@"; do
+    delete_resources $(remove_deployment_prefix "$id")
+done
+```
