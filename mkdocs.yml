@@ -56,6 +56,7 @@ nav:
     - Irods CSI Driver: 'deployments/irods-csi-driver.md'
     - Local Exim: 'deployments/local-exim.md'
     - DiscoveryEnvironment: 'deployments/DiscoveryEnvironment.md'
+    - Vice: 'deployments/vice.md'
 
   - Databases:
     - Databases: 'database/main.md'
