@@ -68,7 +68,7 @@ kubectl delete pvc -l app-type=interactive -n vice-apps
 helm uninstall irods-csi-driver -n irods-csi-driver
 
 # delete all the vice-apps deployments
-## TODO: add this file
+## see below for the content of this file
 ./nuke-vice-analysis.sh $(kubectl get deployments -n vice-apps -l app-type=interactive -o name)
 
 # install again

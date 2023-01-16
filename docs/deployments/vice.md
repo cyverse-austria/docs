@@ -56,7 +56,7 @@ To apply networkpolicies we need to edit the file `/k8s-resources/resources/netw
          - ************/32       # vice-w1 
 ```
 
-***Run policy**
+**Run policy**
 
 ```bash
 kubectl apply -f /k8s-resources/resources/networkpolicies/vice-apps.yml
