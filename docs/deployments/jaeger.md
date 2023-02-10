@@ -15,6 +15,7 @@ kubectl create ns jaeger
 **(optional) changing the env**
 
 Modify files to change the namespace:
+
 * `resources/kustomize/ingress-nginx/overlays/prod/args.yaml`
 * `resources/addons/jaeger/collector.yaml`
 * `resources/addons/jaeger/query.yaml`
