@@ -73,6 +73,11 @@ Before we start to deploy the services we need to create these secrets, and inst
   # kubectl apply -f /k8s-resources/resources/serviceaccounts/app-exposer.yml -n discover
   ```
 
+  ```bash
+  # configurator
+  kubectl create serviceaccount configurator -n discover
+  ```
+
 #### TODO above
 
 ### Deploy
