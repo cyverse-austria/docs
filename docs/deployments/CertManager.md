@@ -7,6 +7,6 @@ kubectl create namespace cert-manager
 kubectl apply -f resources/addons/cert-manager/cert-manager.custom.yaml
 
 # apply issuer
-kubectl apply -f resources/addons/cert-manager/issuers.yaml
+kubectl apply -f resources/addons/cert-manager/issuers.yaml -n discover
 ```
 
