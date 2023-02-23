@@ -106,6 +106,26 @@ select has_verified_email from account_user where username='USERNAME';
 UPDATE account_user SET has_verified_email = true WHERE username='USERNAME';
 ```
 
+### Insert Services
+
+by default the table `api_service` will be empty, in order to add a new service, we will to INSERT INTO the database.
+
+For this we need to add first the `api_servicemaintainer` column, and then `api_service` -
+as an example we will be adding a DE(Discovery environment) service.
+
+```sql
+-- check the tables content
+select * from api_servicemaintainer;
+select * from api_service;
+
+-- First Insert into api_servicemaintainer
+-- save the id of this record - which we will use in the next step
+INSERT INTO api_servicemaintainer (name, website_url, created_at, updated_at) VALUES ('CyVerse', 'https://cyverse.tugraz.at', now(), now());
+
+-- Second Insert into api_service
+INSERT INTO api_service (name, description, about, service_url, is_public, icon_url, created_at, updated_at, service_maintainer_id, approval_key, subtitle) VALUES ('Discovery Environment', 'Use hundreds of bioinformatics apps and manage data in the CyVerse Data Store from a simple web interface', 'By providing a consistent user interface for access to the tools and computing resources needed for specialized scientific analyses, the Discovery Environment facilitates data exploration and scientific discovery.\r', 'https://de.cyverse.at', TRUE, 'https://user.cyverse.org/assets/images/de.png', now(), now(), 3, 'DISCOVERY_ENVIRONMENT', '');
+
+```
 
 ## Migrate Database
 
