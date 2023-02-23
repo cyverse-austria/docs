@@ -127,6 +127,12 @@ INSERT INTO api_service (name, description, about, service_url, is_public, icon_
 
 ```
 
+### Insert Restricted Username (PENDING)
+
+```sql
+INSERT INTO account_restrictedusername (username, created_at, updated_at) VALUES ('username', now(), now());
+```
+
 ## Migrate Database
 
 **TODO**
