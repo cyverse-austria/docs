@@ -123,7 +123,7 @@ select * from api_service;
 INSERT INTO api_servicemaintainer (name, website_url, created_at, updated_at) VALUES ('CyVerse', 'https://cyverse.tugraz.at', now(), now());
 
 -- Second Insert into api_service
-INSERT INTO api_service (name, description, about, service_url, is_public, icon_url, created_at, updated_at, service_maintainer_id, approval_key, subtitle) VALUES ('Discovery Environment', 'Use hundreds of bioinformatics apps and manage data in the CyVerse Data Store from a simple web interface', 'By providing a consistent user interface for access to the tools and computing resources needed for specialized scientific analyses, the Discovery Environment facilitates data exploration and scientific discovery.\r', 'https://de.cyverse.at', TRUE, 'https://user.cyverse.at/assets/images/de.png', now(), now(), 3, 'DISCOVERY_ENVIRONMENT', '');
+INSERT INTO api_service (name, description, about, service_url, is_public, icon_url, created_at, updated_at, service_maintainer_id, approval_key, subtitle) VALUES ('Discovery Environment', 'Use hundreds of bioinformatics apps and manage data in the CyVerse Data Store from a simple web interface', 'By providing a consistent user interface for access to the tools and computing resources needed for specialized scientific analyses, the Discovery Environment facilitates data exploration and scientific discovery.\r', 'https://de.cyverse.at/de', true, 'https://user.cyverse.at/assets/images/de.png', now(), now(), 3, 'DISCOVERY_ENVIRONMENT', '');
 
 ```
 
