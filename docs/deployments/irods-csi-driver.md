@@ -26,7 +26,7 @@ nodeService:
     extraArgs:
       - --cache_size_max=10737418240
       - --cache_root=/irodsfs_pool_cache
-      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"5m","inherit":false},{"path":"/TUG/home/shared","timeout":"5m","inherit":true}]'
+      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"1h","inherit":false},{"path":"/TUG/home/shared","timeout":"1h","inherit":true}]'
 
 ```
 
