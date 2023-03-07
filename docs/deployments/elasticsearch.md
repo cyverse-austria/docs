@@ -11,7 +11,8 @@ Deploying the `statefulsets` Elasticsearch cluster on kubernetes.
 * clone the repo see also [k8s-resources](k8s-resources.md)
 * `cd /k8s-resources`
 * In case you have limited resources change these:
-`cd /k8s-resources/resources/addons/elasticsearch/elasticsearch.yml`
+
+    `vi resources/addons/elasticsearch/elasticsearch.yml`
 
     ```yaml
       replicas: 2
