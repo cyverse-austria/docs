@@ -1,5 +1,7 @@
 # Elasticsearch
 
+**Currently deployed version: `docker.elastic.co/elasticsearch/elasticsearch:5.6.14`**
+
 Deploying the `statefulsets` Elasticsearch cluster on kubernetes.
 
 ## Deploying

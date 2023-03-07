@@ -1,5 +1,7 @@
 # iRODS CSI Driver
 
+**Currently deployed version: 0.9.3**
+
 iRODS Container Storage Interface (CSI) Driver implements the CSI Specification to provide container orchestration engines (like Kubernetes) iRODS access.
 
 ## Preq
@@ -15,17 +17,16 @@ globalConfig:
       client: "irodsfuse"
       host: <IRODS-SERVER-HOST>
       port: "1247"
-      zone: "TUG"
+      zone: "ZONE"
       user: <IRODS-ADMIN-USER>
       password: <PASSWORD>
       retainData: "false"
       enforceProxyAccess: "true"
-      mountPathWhitelist: "/TUG/home"
+      mountPathWhitelist: "/ZONE/home"
 nodeService:
   irodsPool:
     extraArgs:
       - --cache_size_max=10737418240
-      - --cache_root=/irodsfs_pool_cache
       - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"1h","inherit":false},{"path":"/TUG/home/shared","timeout":"1h","inherit":true}]'
 
 ```
@@ -76,18 +77,21 @@ helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-cs
 ```
 
 ## install specific version
+
 ```bash
 helm install -n irods-csi-driver irods-csi-driver --version 0.8.7 irods-csi-driver-repo/irods-csi-driver -f values.yaml
-
-## try the latest
-helm install -n irods-csi-driver irods-csi-driver --version 0.9.2 irods-csi-driver-repo/irods-csi-driver -f values.yaml
 ```
 
 ## NOTE
-With `irods-csi-driver` **version > 0.8.7**, there’s a small change on the configuration file `user_config.yaml` for driver installation.
-**You will need to delete --cache_root and --temp_root flags if you used it.**
 
+With `irods-csi-driver` **version <= 0.8.7**, the **extraArgs** of `values.yaml` file will look like:
 
+```yaml
+    extraArgs:
+      - --cache_size_max=10737418240
+      - --cache_root=/irodsfs_pool_cache
+      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"1h","inherit":false},{"path":"/TUG/home/shared","timeout":"1h","inherit":true}]'
+```
 
 # nuke-vice-analysis.sh
 
