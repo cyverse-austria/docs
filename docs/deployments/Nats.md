@@ -71,7 +71,7 @@ account key stored /nsc/nkeys/keys/A/BD/ABDVLFKHFWYBHJWUNC35S3VA4YGCW2SVD6MU2RSZ
 
 ```
 
-**copy secert file from the nats-box pod & create from it a secret**
+**copy secret file from the nats-box pod & create from it a secret**
 
 ```bash
 # copy the cred file from the pod 

@@ -27,7 +27,7 @@ nodeService:
   irodsPool:
     extraArgs:
       - --cache_size_max=10737418240
-      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"1h","inherit":false},{"path":"/TUG/home/shared","timeout":"1h","inherit":true}]'
+      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/ZONE","timeout":"-1ns","inherit":false},{"path":"/ZONE/home","timeout":"1h","inherit":false},{"path":"/ZONE/home/shared","timeout":"1h","inherit":true}]'
 
 ```
 
@@ -90,7 +90,7 @@ With `irods-csi-driver` **version <= 0.8.7**, the **extraArgs** of `values.yaml`
     extraArgs:
       - --cache_size_max=10737418240
       - --cache_root=/irodsfs_pool_cache
-      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/TUG","timeout":"-1ns","inherit":false},{"path":"/TUG/home","timeout":"1h","inherit":false},{"path":"/TUG/home/shared","timeout":"1h","inherit":true}]'
+      - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/ZONE","timeout":"-1ns","inherit":false},{"path":"/ZONE/home","timeout":"1h","inherit":false},{"path":"/ZONE/home/shared","timeout":"1h","inherit":true}]'
 ```
 
 # nuke-vice-analysis.sh
