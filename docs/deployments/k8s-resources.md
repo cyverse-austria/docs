@@ -46,6 +46,16 @@ Before we start to deploy the services we need to create these secrets, and inst
 
 **These secrets below can be deployed using:** `git clone -b discover https://gitlab.cyverse.org/tugraz/docker-tugraz-data` see also [cyverse.at](https://github.com/mb-wali/cyverse.at/tree/main/k8s/discoveryEnvironment) repo.
 
+```bash
+git clone -b discover git@gitlab.cyverse.org:mbwali/docker-tugraz-data.git
+cd docker-tugraz-data
+
+# run for discover env
+go run loadsecrets.go --env discover --namespace discover --envtype de
+```
+
+This will create the followings:
+
 * `gpg-keys`
 * `ui-nginx-tls`
 * `gpg-keys`
@@ -53,6 +63,7 @@ Before we start to deploy the services we need to create these secrets, and inst
 * `signing-keys`
 * `accepted-keys`
 * `ssl-files`
+
 * Make sure [elasticsearch](elasticsearch.md) is deployed.
 * Make sure [skaffold](https://docs.gomplate.ca/installing/#manual-install) is installed in your OS.
     ```bash
@@ -71,6 +82,11 @@ Before we start to deploy the services we need to create these secrets, and inst
 
   ## For discover env
   # kubectl apply -f /k8s-resources/resources/serviceaccounts/app-exposer.yml -n discover
+  ```
+
+  ```bash
+  # configurator
+  kubectl create serviceaccount configurator -n discover
   ```
 
 #### TODO above

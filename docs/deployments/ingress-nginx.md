@@ -25,3 +25,15 @@ kubectl apply -k resources/kustomize/ingress-nginx/overlays/prod
 ```
 
 
+
+## Issues
+
+**failed calling webhook**
+```bash
+"Internal error occurred: failed calling webhook \"validate.nginx.ingress.kubernetes.io\": Post \"https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s\": service \"ingress-nginx-controller-admission\" not found"
+```
+
+**solution**
+```bash
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+```

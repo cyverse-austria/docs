@@ -58,6 +58,8 @@ nav:
     - DiscoveryEnvironment: 'deployments/DiscoveryEnvironment.md'
     - Vice: 'deployments/vice.md'
     - Jaeger: 'deployments/jaeger.md'
+    - Cert-Manager: 'deployments/CertManager.md'
+    - Nats: 'deployments/Nats.md'
 
   - Databases:
     - Databases: 'database/main.md'
