@@ -46,7 +46,6 @@ helm repo update
 kubectl create namespace irods-csi-driver
 
 # install csi-driver
-# make sure to edit values-cyverse.at.yaml
 helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f ./values.yaml
 
 # or upgrade
