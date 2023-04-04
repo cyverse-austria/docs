@@ -62,15 +62,15 @@ When we want to upgrade the `irods-csi-driver` to a newer version, we need to st
 # update helm repo
 helm repo update
 
+# delete all the vice-apps deployments
+## see below for the content of this file
+./nuke-vice-analysis.sh $(kubectl get deployments -n vice-apps -l app-type=interactive -o name)
+
 # delete the pvc
 kubectl delete pvc -l app-type=interactive -n vice-apps
 
 # uninstall the irods-csi-driver
 helm uninstall irods-csi-driver -n irods-csi-driver
-
-# delete all the vice-apps deployments
-## see below for the content of this file
-./nuke-vice-analysis.sh $(kubectl get deployments -n vice-apps -l app-type=interactive -o name)
 
 # install again
 helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-csi-driver -f values.yaml
