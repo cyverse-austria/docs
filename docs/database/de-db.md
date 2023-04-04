@@ -101,3 +101,18 @@ migrate -help
 ```bash
 migrate -database postgres://USER:PASSWORD@DB_HOST.com/de?sslmode=disable -path migrations up
 ```
+
+#### Run to migrate de database (docker container)
+
+**Note**: our host where the docker container is running is required to have access permissions to the Database.
+
+
+```bash
+# clone and navigate to the directory 
+# where the /migration folder is located
+git clone https://github.com/cyverse-de/de-database.git
+cd de-database
+
+# run docker container and mount the migration directory.
+docker run --rm -v $(pwd)/migrations:/migrations --network host migrate/migrate --database "postgresql://USER:PASSWORD@DB_HOST.com:5432/de?sslmode=disable" -path /migrations up
+```
