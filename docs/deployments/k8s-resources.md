@@ -58,7 +58,6 @@ This will create the followings:
 
 * `gpg-keys`
 * `ui-nginx-tls`
-* `gpg-keys`
 * `pgpass-files`
 * `signing-keys`
 * `accepted-keys`
