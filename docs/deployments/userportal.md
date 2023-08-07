@@ -2,8 +2,6 @@
 
 ## Prerequisites
 
-### TODO: add source location.
-
 ### LDAP
 Setup required ldap user.
 
@@ -74,19 +72,14 @@ iadmin moduser portal password YOURPASSWORDHERE
 
 For Database configuration and setup vist [portal-db docs](../database/portal-db.md).
 
-### Images
-
-1. harbor.cyverse.org/hub/library/nginx:1.20-alpine **Replaced with**:nginx:1.20-alpine
-
-2. mbwali/portal:tug-stable
-    * Todo: tekton should build this via the URL.
-
 ## Deploy
+
+The kustomize manifests can be found in repository [https://github.com/cyverse-austria/portal](https://github.com/cyverse-austria/portal) you can clone this repository and follow the [README](https://github.com/cyverse-austria/portal/blob/main/README.md) guide.
 
 ```bash
 # create ns
 kubectl create ns user-portal
 
 # deploy 
-kubectl apply -k portal/user-portal/base -n user-portal
+kubectl apply -k /base -n user-portal
 ```
