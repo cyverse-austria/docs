@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+Before we dive in to the deploying the user-portal, please make sure that you have the following configuration in place.
+
 ### LDAP
 Setup required ldap user.
 
