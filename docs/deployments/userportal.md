@@ -5,7 +5,8 @@
 Before we dive in to the deploying the user-portal, please make sure that you have the following configuration in place.
 
 ### LDAP
-Setup required ldap user.
+
+It is required that we have a user in LDAP - so the user-portal can create/edit users.
 
 #### create portal user
 ##### Create portal-user.ldif
@@ -61,7 +62,7 @@ ldapmodify -x -D "cn=Manager,dc=tugraz,dc=at" -w "LDAP_PASSWORD" -f portal-de_ad
 
 ### iRODs
 
-For user portal we would need to create an irods `rodsadmin` user.
+For user-portal we would need to create an irods `rodsadmin` user.
 
 ```bash
 # replace YOURPASSWORDHERE 
