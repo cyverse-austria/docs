@@ -35,7 +35,7 @@ cd ansible-k8s
 
 ### create your inventory
 
-Create your inventory file under `/inventory/cyverse` and replace the host names as yours.
+Create your inventory file under `/inventory/MYINVENTORY` and replace the host names as yours.
 ```bash
 [k8s:children]
 k8s-control-plane
@@ -77,25 +77,25 @@ haproxy-01
 #### Check if your hosts are reachable
 
 ```bash
-ansible -i MYINVENTORY -m ping all --user root --become
+ansible -i /inventory/MYINVENTORY -m ping all --user root --become
 ```
 
 #### Setup firewall configs
 
 ```bash
-ansible-playbook -i MYINVENTORY firewalld-config.yml --user root --become
+ansible-playbook -i /inventory/MYINVENTORY firewalld-config.yml --user root --become
 ```
 
 #### Provision your nodes
 
 ```bash
-ansible-playbook -i MYINVENTORY provision-nodes.yml --user root --become
+ansible-playbook -i /inventory/MYINVENTORY provision-nodes.yml --user root --become
 ```
 
 #### Init master/worker nodes
 
 ```bash
-ansible-playbook -i MYINVENTORY multi-master.yml --user root --become
+ansible-playbook -i /inventory/MYINVENTORY multi-master.yml --user root --become
 ```
 
 #### Tainting and Labeling VICE Worker Nodes
