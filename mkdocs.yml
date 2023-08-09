@@ -37,10 +37,10 @@ nav:
   - Home: 'index.md'
   # - Development:
   #   - overview: 'development/index.md'
-  - services:
-    - kubernetes: 'services/kubernetes/index.md'
-    - keycloak: 'services/keycloak/realm.md'
-    - Namespaces: 'services/kubernetes/ns.md'
+  - services: 'services/kubernetes/index.md'
+    # - kubernetes: 'services/kubernetes/index.md'
+    # - keycloak: 'services/keycloak/realm.md'
+    # - Namespaces: 'services/kubernetes/ns.md'
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
     - UserPortal: 'deployments/userportal.md'
