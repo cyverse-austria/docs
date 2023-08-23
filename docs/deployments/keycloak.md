@@ -1,4 +1,5 @@
 # Keycloak
+*Current keycloak version: 22.0*
 
 ## Preq
 
@@ -31,8 +32,11 @@ secretGenerator:
 configMapGenerator:
 - name: keycloak-config
   literals:
-  - KEYCLOAK_HOSTNAME=keycloak.example.com
+  - KEYCLOAK_HOSTNAME=https://keycloak.example.com/auth
+  - KEYCLOAK_HOSTNAME_STRICT_HTTPS=false
+  - KEYCLOAK_HOSTNAME_STRICT=false
   - KEYCLOAK_LOGLEVEL=INFO
+  - KEYCLOAK_PROXY=edge
   - DB_VENDOR=postgres
   - DB_ADDR=<DATABASE_HOST>
   - DB_PORT=5432
