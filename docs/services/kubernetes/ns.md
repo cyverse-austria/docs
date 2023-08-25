@@ -28,10 +28,14 @@ This namespace is dedicated to the [VICE](https://cyverse.org/node/50) related d
 
 This namespace is dedicated to Keycloak related deployment and configurations.
 
+<del>
+
 ## openebs
 
 This namespace is dedicated to the [openebs](https://openebs.io/) deployment.
 OpenEBS turns any storage available on the Kubernetes worker nodes into local or distributed Kubernetes Persistent Volumes.
+
+</del>
 
 ## irods-csi-driver
 

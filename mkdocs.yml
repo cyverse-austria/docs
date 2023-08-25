@@ -44,10 +44,10 @@ nav:
   - Deployments:
     - Kubernetes: 'deployments/kubernetes-deploy.md'
     - UserPortal: 'deployments/userportal.md'
-    - Openebs: 'deployments/openebs.md'
+    # - Openebs: 'deployments/openebs.md'
     - Keycloak: 'deployments/keycloak.md'
-    - Mail: 'deployments/exim4.md'
-    - Redis HA: 'deployments/redis-ha.md'
+    # - Mail: 'deployments/exim4.md'
+    # - Redis HA: 'deployments/redis-ha.md'
     - K8s-resources: 'deployments/k8s-resources.md'
     - Elasticsearch: 'deployments/elasticsearch.md'
     - RabbitMQ: 'deployments/RabbitMQ.md' # move this since its not k8s
