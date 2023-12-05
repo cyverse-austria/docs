@@ -342,6 +342,9 @@ curl -XGET "http://elasticsearch:9200/_cluster/health?pretty"
 
 # run indexing from file
 curl -sX PUT "http://elasticsearch:9200/data" -d @settings.json
+
+# check indices of /data
+curl -XGET "http://elasticsearch:9200/_cat/indices/data"
 ```
 
 #### (optional) delete current indexes
