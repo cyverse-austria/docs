@@ -1,6 +1,6 @@
 # iRODS CSI Driver
 
-**Currently deployed version: 0.9.4**
+**Currently deployed version: 0.9.9**
 
 iRODS Container Storage Interface (CSI) Driver implements the CSI Specification to provide container orchestration engines (like Kubernetes) iRODS access.
 
@@ -28,6 +28,7 @@ nodeService:
     extraArgs:
       - --cache_size_max=10737418240
       - '--cache_timeout_settings=[{"path":"/","timeout":"-1ns","inherit":false},{"path":"/ZONE","timeout":"-1ns","inherit":false},{"path":"/ZONE/home","timeout":"1h","inherit":false},{"path":"/ZONE/home/shared","timeout":"1h","inherit":true}]'
+      - --data_root=/irodsfs-pool
 
 ```
 
@@ -78,7 +79,7 @@ helm install -n irods-csi-driver irods-csi-driver irods-csi-driver-repo/irods-cs
 ## install specific version
 
 ```bash
-helm install -n irods-csi-driver irods-csi-driver --version 0.8.7 irods-csi-driver-repo/irods-csi-driver -f values.yaml
+helm install -n irods-csi-driver irods-csi-driver --version 0.9.9 irods-csi-driver-repo/irods-csi-driver -f values.yaml
 ```
 
 ## NOTE
