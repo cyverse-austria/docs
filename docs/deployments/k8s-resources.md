@@ -15,7 +15,7 @@ Make sure [gomplate](https://docs.gomplate.ca/installing/#manual-install) is ins
 **Here is an example on ubuntu:**
 
 ```bash
-sudo curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.10.0/gomplate_linux-amd64
+sudo curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.11.5/gomplate_linux-amd64
 
 sudo chmod 755 /usr/local/bin/gomplate
 
