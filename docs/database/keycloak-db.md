@@ -34,3 +34,10 @@ To backup the database we will use the [pg_dump](https://www.postgresql.org/docs
 #       -U user  -d database
 pg_dump -U keycloak -d keycloak > keycloak.sql
 ```
+
+### Issues
+Sometimes the login via SSO - requires you to again add your existing data, and adding it again throws an error because its already saved in the database.
+you can remove the entry and try again to login with SSO.
+```bash
+keycloak=# DELETE FROM federated_identity WHERE federated_username='mb1990';
+```
