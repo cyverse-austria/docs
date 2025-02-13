@@ -1,6 +1,6 @@
 # iRODS CSI Driver
 
-**Currently deployed version: 0.9.9**
+**Currently deployed version: 0.11.0**
 
 iRODS Container Storage Interface (CSI) Driver implements the CSI Specification to provide container orchestration engines (like Kubernetes) iRODS access.
 
