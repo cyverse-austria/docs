@@ -22,7 +22,7 @@ chmod +x rabbitmqadmin
 
 ### Commands 
 
-#### discover 
+#### QA 
 
 ```bash
 # check status
@@ -43,7 +43,7 @@ kubectl rollout restart deployment infosquito2 -n discover
 # ./deploy.py -Bn discover -p infosquito2 -C
 ```
 
-#### prod
+#### PROD
 ```bash
 ## add your password to a temp var
 read -s PASSWORD && export PASSWORD
