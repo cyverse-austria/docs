@@ -71,7 +71,7 @@ nav:
     - Grouper Database: 'database/grouper-db.md'
     - QMS Database: 'database/qms-db.md'
     - Portal Database: 'database/portal-db.md'
-
+  - Others: 'others/main.md'
 
 
 # Customization
