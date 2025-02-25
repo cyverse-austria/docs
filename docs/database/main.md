@@ -2,16 +2,16 @@
 
 CyVerse is using [PostgreSQL](https://www.postgresql.org/) as its database.
 
-**This database dedicated to the *discovery environment* of Cyverse, which is used for multiple services such as:**
+**These database dedicated to the *discovery environment* of Cyverse, which is used for multiple services such as:**
 
-* [de](de-db.md)
-* [notifications](notifications-db.md)
-* [metadata](metadata-db.md)
-* [unleash](unleash-db.md)
-* [grouper](grouper-db.md)
-* [qms](qms-db.md)
-* [portal](portal-db.md)
-* [keycloak](keycloak-db.md)
+* [De Database](de-db.md)
+* [Notifications Database](notifications-db.md)
+* [Metadata Database](metadata-db.md)
+* [Unleash Database](unleash-db.md)
+* [Grouper Database](grouper-db.md)
+* [QMS Database](qms-db.md)
+* [Portal Database](portal-db.md)
+* [Keycloak Database](keycloak-db.md)
 
 **NOTE: permissions database has been merged with DE database.**
 
@@ -73,3 +73,5 @@ listen_addresses = '*'          # what IP address(es) to listen on;
 |  keycloak |    keycloak |
 |  qms |    de |
 
+**This database dedicated to the *iRODS***
+* [iRODS Database](irods-db.md)
