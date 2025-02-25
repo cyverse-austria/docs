@@ -25,3 +25,12 @@ GRANT ALL PRIVILEGES ON DATABASE "ICAT" to irods;
 ## Initialize database
 
 The initializing of the iRODS Database is taken care by [setup_irods.py](https://github.com/CyVerse-Ansible/ansible-irods-cfg/blob/main/tasks/setup_irods.yml#L25)
+
+## Grant `icat_reader` Database permissions
+
+Run this only after the initialize of iRODS database.
+
+```sql
+--- \c ICAT
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA "public" TO icat_reader;
+```
