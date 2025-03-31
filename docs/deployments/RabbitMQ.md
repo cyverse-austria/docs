@@ -1,4 +1,5 @@
-# TODO
+# AMQP
+We are using ansible [playbooks](https://github.com/cyverse-austria/ansible-amqp) to install and configure AMQP server.
 
 
 ## Reindex RabbitMQ jobs
@@ -37,10 +38,12 @@ read -s PASSWORD && export PASSWORD
 # publish the message to reindex all
 ./rabbitmqadmin publish -V /cyverse/de -u cyverse -p $PASSWORD exchange=de routing_key=index.all payload=""
 
-# restart infosquito2
-kubectl rollout restart deployment infosquito2 -n discover
-# IF NOT deployed
-# ./deploy.py -Bn discover -p infosquito2 -C
+# restart services
+kubectl rollout restart deployment infosquito2 -n qa
+kubectl rollout restart deployment search -n qa
+
+# IF not deployed
+# ./deploy.py -Bn qa -p infosquito2 search -C
 ```
 
 #### PROD
