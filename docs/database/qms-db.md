@@ -21,62 +21,35 @@ create database qms with owner de;
 
 ```bash
 # psql -U postgres
-\c de
+\c qms
 create extension "uuid-ossp";
 create extension "moddatetime";
 create extension "btree_gist";
 create extension "insert_username";
 ```
 
-### Populate Database
+### Populate / Migrate the Database
 
-**TODO**
+Ensure the following before running the command:
+- Docker is installed on your host machine.
+- The host has network access to the target PostgreSQL database.
 
-
-### Migrate Database
-
-Once a while upon updating the k8s services, we would require to migrate the **qms-database**, to add the latest database changes.
-
-#### Clone QMS repo
+Clone the migration repository:
 
 ```bash
-git clone https://github.com/cyverse/QMS.git
-git fetch && git checkout prod
-cd QMS
+git clone https://github.com/cyverse-austria/qms.git
 ```
 
-#### install [golang-migrate](https://github.com/golang-migrate/migrate)
-These steps are used on **Ubuntu** debian based OS.
+Run the migrations using Docker:
 
 ```bash
-curl -s https://packagecloud.io/install/repositories/golang-migrate/migrate/script.deb.sh | sudo bash
-apt-get update
-apt-get install -y migrate
-
-# check
-migrate -help
+docker run --rm \
+  -v $(pwd)/qms/migrations:/migrations \
+  --network host \
+  migrate/migrate \
+  --database "postgres://de:$DE_PASSWORD@$DE_HOST/qms?sslmode=disable" \
+  -path /migrations \
+  up
 ```
 
-#### Run to migrate QMS database
-
-**Note**: we are running the `/migration` directory from [QMS](https://github.com/cyverse/QMS.git)
-
-```bash
-migrate -database postgres://USER:PASSWORD@DB_HOST.com/qms?sslmode=disable -path migrations up
-```
-
-#### Run to migrate de database (docker container)
-
-**Note**: our host where the docker container is running is required to have access permissions to the Database.
-
-
-```bash
-# clone and navigate to the directory 
-# where the /migration folder is located
-git clone https://github.com/cyverse/QMS.git
-git fetch && git checkout prod
-cd QMS
-
-# run docker container and mount the migration directory.
-docker run --rm -v $(pwd)/migrations:/migrations --network host migrate/migrate --database "postgresql://USER:PASSWORD@DB_HOST.com:5432/qms?sslmode=disable" -path /migrations up
-```
+*Note: Replace $DE_USER, $DE_PASSWORD, and $DE_HOST with the appropriate environment variables or values.*

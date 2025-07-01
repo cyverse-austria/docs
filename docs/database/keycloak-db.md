@@ -21,10 +21,7 @@ create user keycloak with password '********';
 create database keycloak with owner keycloak;
 ```
 
-### Migrate Database
-
-There is no need to touch the database to migrate to newer version of Keycloak, since the migration happens automaticly with upgrading the version of Keycloak.
-
+> **Note:** The database initializes automatically.
 
 ### Backup Database
 

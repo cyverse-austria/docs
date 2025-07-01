@@ -31,10 +31,4 @@ create extension "moddatetime";
 create extension "btree_gist";
 ```
 
-### Populate Database
-
-**TODO**
-
-### Migrate Database
-
-**TODO**
+> **Note:** The Ansible playbooks handle database initialization and population automatically.
