@@ -37,7 +37,7 @@ Ensure the following before running the command:
 Clone the migration repository:
 
 ```bash
-git clone https://github.com/cyverse-de/mgmt.git
+git clone https://github.com/cyverse-austria/mgmt.git
 ```
 
 Run the migrations using Docker:

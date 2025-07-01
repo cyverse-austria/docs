@@ -37,7 +37,7 @@ Ensure the following before running the command:
 Clone the migration repository:
 
 ```bash
-git clone https://github.com/cyverse-de/notifications-db.git
+git clone https://github.com/cyverse-austria/notifications-db.git
 ```
 
 Run the migrations using Docker:

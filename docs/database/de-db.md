@@ -40,7 +40,7 @@ Ensure the following before running the command:
 Clone the migration repository:
 
 ```bash
-git clone https://github.com/cyverse-de/de-database.git
+git clone https://github.com/cyverse-austria/de-database.git
 ```
 
 Run the migrations using Docker:
