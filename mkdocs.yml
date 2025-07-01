@@ -65,6 +65,7 @@ nav:
     - Databases: 'database/main.md'
     - DE Database: 'database/de-db.md'
     - Metadata Database: 'database/metadata-db.md'
+    - De Releases: 'database/de-releases.md'
     - Keycloak Database: 'database/keycloak-db.md'
     - Notifications Database: 'database/notifications-db.md'
     - Unleash Database: 'database/unleash-db.md'

@@ -4,14 +4,19 @@ CyVerse is using [PostgreSQL](https://www.postgresql.org/) as its database.
 
 **These database dedicated to the *discovery environment* of Cyverse, which is used for multiple services such as:**
 
-* [De Database](de-db.md)
-* [Notifications Database](notifications-db.md)
-* [Metadata Database](metadata-db.md)
-* [Unleash Database](unleash-db.md)
-* [Grouper Database](grouper-db.md)
-* [QMS Database](qms-db.md)
-* [Portal Database](portal-db.md)
-* [Keycloak Database](keycloak-db.md)
+
+| Database      | Owner    | Auto Init    | Auto Migrate |
+| ------------- | -------- | ------------ | ------------ |
+| [de Database](de-db.md)            | de       | no           | no           |
+| [Notifications Database](notifications-db.md) | de       | no           | no           |
+| [Metadata Database](metadata-db.md)      | de       | no           | no           |
+| [DE Releases](de-releases.md)   | de       | no           | no           |
+| [Grouper Database](grouper-db.md)       | grouper  | yes          | ?            |
+| [QMS Database](qms-db.md)           | de       | configurable | configurable |
+| [Unleash Database](unleash-db.md)       | de       | yes          | ?            |
+| [Keycloak Database](keycloak-db.md)      | keycloak | yes          | ?            |
+| [Portal Database](portal-db.md)      | portal_db_reader       | no           | no           |
+
 
 **NOTE: permissions database has been merged with DE database.**
 
