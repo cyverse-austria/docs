@@ -3,6 +3,12 @@
 
 ## 1. Post-Deployment iRODS
 
+### Gain access to the host and switch to irods admin user
+```bash
+ssh @IRODS.HOST
+su irods
+```
+
 ### Create iRODS Account for `de-irods`
 To create the user `de-irods` and set the password:
 
