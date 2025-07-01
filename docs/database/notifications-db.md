@@ -28,11 +28,26 @@ create extension "moddatetime";
 create extension "btree_gist";
 ```
 
-### Populate Database
+### Populate / Migrate the Database
 
-**TODO**
+Ensure the following before running the command:
+- Docker is installed on your host machine.
+- The host has network access to the target PostgreSQL database.
 
-### Migrate Database
+Clone the migration repository:
 
-**TODO**
+```bash
+git clone https://github.com/cyverse-de/notifications-db.git
+```
 
+Run the migrations using Docker:
+
+```bash
+docker run --rm \
+  -v $(pwd)/notifications-db/migrations:/migrations \
+  --network host \
+  migrate/migrate \
+  --database "postgres://de:$DE_PASSWORD@$DE_HOST/notifications?sslmode=disable" \
+  -path /migrations \
+  up
+```
