@@ -72,3 +72,36 @@ generatorOptions:
 # apply kustomize
 kubectl apply -k ./base/ -n keycloak
 ```
+
+# Keycloak: Setting Up a New Realm for CyVerse
+
+This guide walks you through the process of creating and configuring a fresh Keycloak realm for **CyVerse**.
+
+---
+
+## 1. Create the Realm
+
+1. Log in to the Keycloak admin console.
+2. Create a new realm named: **CyVerse**
+
+---
+
+## 2. Import Clients
+
+Import predefined clients from the following repository:
+
+- 📂 [Clients Configuration Files](https://github.com/mb-wali/cyverse.at/tree/main/k8s/keycloak/Admin-config/clients)
+
+> **Note:** These configuration files are currently private. **TODO:** Make the repository public for easier access.
+
+---
+
+## 3. Add Mappers and Groups
+
+Set up necessary mappers and user groups as outlined in the repository:
+
+- 📘 [Admin Configuration Guide](https://github.com/mb-wali/cyverse.at/blob/main/k8s/keycloak/README.md#admin-configs)
+
+> **TODO:** Ensure this documentation is made public if sharing with external teams.
+
+---
