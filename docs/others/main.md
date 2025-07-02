@@ -10,25 +10,18 @@ ssh <irods_user>@IRODS.HOST
 sudo su - irods
 ```
 
-### Create iRODS Account for `de-irods`
-To create the user `de-irods` and set the password:
-
-```bash
-iadmin mkuser de-irods rodsadmin
-iadmin moduser de-irods password DE_USER_PASSWORD
-```
-
-### Add de-irods to the rodsadmin Group
-Add the user de-irods to the rodsadmin group:
-
-```bash
-iadmin atg rodsadmin de-irods
-```
-
 ### Grant Ownership of /TUG/home/shared to rodsadmin
 Ensure that rodsadmin owns the specified directory:
 ```bash
 ichmod own rodsadmin /TUG/home/shared
+```
+
+### Grant Read Access to Public
+Grant public read access to the home and shared directories:
+
+```bash
+ichmod read public /TUG/home
+ichmod read public /TUG/home/shared
 ```
 
 ### Create iRODS Account for portal
@@ -43,14 +36,6 @@ Add the portal user to the rodsadmin group:
 
 ```bash
 iadmin atg rodsadmin portal
-```
-
-### Grant Read Access to Public
-Grant public read access to the home and shared directories:
-
-```bash
-ichmod read public /TUG/home
-ichmod read public /TUG/home/shared
 ```
 
 
