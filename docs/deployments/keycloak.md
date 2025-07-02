@@ -72,6 +72,7 @@ generatorOptions:
 # apply kustomize
 kubectl apply -k ./base/ -n keycloak
 ```
+---
 
 # Keycloak: Setting Up a New Realm for CyVerse
 

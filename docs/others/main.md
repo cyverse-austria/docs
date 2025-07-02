@@ -10,6 +10,21 @@ ssh <irods_user>@IRODS.HOST
 sudo su - irods
 ```
 
+### Create iRODS Account for de-irods
+
+To create the user de-irods and set the password:
+```bash
+iadmin mkuser de-irods rodsadmin
+iadmin moduser de-irods password DE_USER_PASSWORD
+```
+
+### Add de-irods to the rodsadmin Group
+
+Add the user de-irods to the rodsadmin group:
+```bash
+iadmin atg rodsadmin de-irods
+```
+
 ### Grant Ownership of /TUG/home/shared to rodsadmin
 Ensure that rodsadmin owns the specified directory:
 ```bash
