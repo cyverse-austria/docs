@@ -29,7 +29,7 @@ Database initialization is fully automated and managed through Ansible playbooks
 
 ## Grant `icat_reader` Database permissions
 
-Run this only after the initialize of iRODS database.
+Run this only after the initialize of **iRODS database**.
 
 ```sql
 --- \c ICAT
