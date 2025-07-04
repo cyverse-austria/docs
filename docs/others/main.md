@@ -116,3 +116,90 @@ apt-get update && apt-get install curl
 ```bash
 curl "http://apps/bootstrap?user=anonymous"
 ```
+
+
+# User Provisioning: iRODS + LDAP
+
+This guide explains how to create a new user in both **iRODS** and **OpenLDAP**, including group membership and password setup.
+
+---
+
+## 1. Create iRODS User Account
+
+Run the following commands as an iRODS administrator:
+
+```bash
+iadmin mkuser user01 rodsuser
+iadmin moduser user01 password user01password
+```
+This creates an iRODS user `user01` with the type `rodsuser` and sets the password to `user01password`.
+
+## 2. Create LDAP User Account
+
+### Step 1: Create an LDIF file for the new user
+Example: `testuser.ldif`
+
+```ldif
+dn: uid=user01,ou=People,dc=tugraz,dc=at
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user01
+uidNumber: 40005
+gidNumber: 10009
+homeDirectory: /home/user01
+mail: user01@cyverse.at
+sn: surname
+givenName: Test
+cn: Test Surname
+title: University/College Staff
+o: Graz University of Technology
+```
+
+### Step 2: Add the user to LDAP
+```bash
+ldapadd -x -D "cn=Manager,dc=tugraz,dc=at" -w "$MANAGER_PASSWORD" -f testuser.ldif
+```
+
+## 3. Set LDAP Password for the User
+```bash
+ldappasswd -x \
+  -D "cn=Manager,dc=tugraz,dc=at" \
+  -w "$MANAGER_PASSWORD" \
+  -s "user01password" \
+  "uid=user01,ou=People,dc=tugraz,dc=at"
+```
+
+## 4. Add User to everyone Group
+
+### Step 1: Create an LDIF file for group modification
+Example: `add-everyone.ldif`
+
+```ldif
+dn: cn=everyone,ou=Groups,dc=tugraz,dc=at
+changetype: modify
+add: memberuid
+memberuid: user01
+```
+
+### Step 2: Apply the group modification
+```bash
+ldapmodify -x -D "cn=Manager,dc=tugraz,dc=at" -w "$MANAGER_PASSWORD" -f add-everyone.ldif
+```
+
+## 5. Add User to community Group
+
+### Step 1: Create an LDIF file for group modification
+Example: `add-community.ldif`
+
+```ldif
+dn: cn=community,ou=Groups,dc=tugraz,dc=at
+changetype: modify
+add: memberuid
+memberUid: user01
+```
+
+### Step 2: Apply the group modification
+```bash
+ldapmodify -x -D "cn=Manager,dc=tugraz,dc=at" -w "$MANAGER_PASSWORD" -f add-community.ldif
+```
