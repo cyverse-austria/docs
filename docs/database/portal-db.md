@@ -12,8 +12,6 @@ psql -U postgres
 ```
 
 ### Create required Database and User
-See also [portal2/setup-database](https://gitlab.com/cyverse/portal2#setup-database)
-
 
 ```bash
 # create user
@@ -30,6 +28,7 @@ GRANT postgres TO portal_db_reader;
 ### Populate / Migrate the Database
 
 Ensure the following before running the command:
+
 - Docker is installed on your host machine.
 - The host has network access to the target PostgreSQL database.
 
