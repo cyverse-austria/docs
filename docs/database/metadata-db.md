@@ -47,7 +47,7 @@ docker run --rm \
   -v $(pwd)/metadata-db/migrations:/migrations \
   --network host \
   migrate/migrate \
-  --database "postgres://de:$DE_PASSWORD@$DE_HOST/metadata?sslmode=disable" \
+  --database "postgres://de:$DE_PASSWORD@$DB_HOST/metadata?sslmode=disable" \
   -path /migrations \
   up
 ```

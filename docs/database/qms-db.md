@@ -47,9 +47,9 @@ docker run --rm \
   -v $(pwd)/qms/migrations:/migrations \
   --network host \
   migrate/migrate \
-  --database "postgres://de:$DE_PASSWORD@$DE_HOST/qms?sslmode=disable" \
+  --database "postgres://de:$DE_PASSWORD@$DB_HOST/qms?sslmode=disable" \
   -path /migrations \
   up
 ```
 
-*Note: Replace $DE_USER, $DE_PASSWORD, and $DE_HOST with the appropriate environment variables or values.*
+*Note: Replace $DE_USER, $DE_PASSWORD, and $DB_HOST with the appropriate environment variables or values.*

@@ -50,7 +50,7 @@ docker run --rm \
   -v $(pwd)/de-database/migrations:/migrations \
   --network host \
   migrate/migrate \
-  --database "postgres://de:$DE_PASSWORD@$DE_HOST/de?sslmode=disable" \
+  --database "postgres://de:$DE_PASSWORD@$DB_HOST/de?sslmode=disable" \
   -path /migrations \
   up
 ```

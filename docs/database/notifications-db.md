@@ -47,7 +47,7 @@ docker run --rm \
   -v $(pwd)/notifications-db/migrations:/migrations \
   --network host \
   migrate/migrate \
-  --database "postgres://de:$DE_PASSWORD@$DE_HOST/notifications?sslmode=disable" \
+  --database "postgres://de:$DE_PASSWORD@$DB_HOST/notifications?sslmode=disable" \
   -path /migrations \
   up
 ```
