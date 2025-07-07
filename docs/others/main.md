@@ -129,9 +129,9 @@ Run the following commands as an iRODS administrator:
 
 ```bash
 iadmin mkuser user01 rodsuser
-iadmin moduser user01 password user01password
+iadmin moduser user01 password PASSWORD
 ```
-This creates an iRODS user `user01` with the type `rodsuser` and sets the password to `user01password`.
+This creates an iRODS user `user01` with the type `rodsuser` and sets the password to `PASSWORD`.
 
 ### 2. Create LDAP User Account
 
@@ -165,7 +165,7 @@ ldapadd -x -D "cn=Manager,dc=tugraz,dc=at" -w "$MANAGER_PASSWORD" -f testuser.ld
 ldappasswd -x \
   -D "cn=Manager,dc=tugraz,dc=at" \
   -w "$MANAGER_PASSWORD" \
-  -s "user01password" \
+  -s "PASSWORD" \
   "uid=user01,ou=People,dc=tugraz,dc=at"
 ```
 
