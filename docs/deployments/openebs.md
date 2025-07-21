@@ -1,15 +1,16 @@
 # [OpenEBS](https://openebs.io/)
 
-## Deploy
+## Install with Helm
 
 ```bash
-# create namespace
-kubectl create ns openebs
+helm repo add openebs https://openebs.github.io/openebs
+helm repo update
 
-# deploy
-kubectl -n openebs apply -f https://openebs.github.io/charts/openebs-operator.yaml
+helm install openebs --namespace openebs openebs/openebs --create-namespace
+
+# If you do not want to install OpenEBS Replicated Storage, use the following command
+helm install openebs --namespace openebs openebs/openebs --set engines.replicated.mayastor.enabled=false --create-namespace
 ```
-
 
 ## Issues
 
