@@ -35,7 +35,7 @@ Once the container runs without errors:
 - Access [keycloak-server](http://127.0.0.1:8087)
 - Enter _Administration console_
 - Create a new realm
-- Create a new client with id **portal**
+- Create a new [client](../clients/clients.md) with id **portal**
 - Go to the newly created client and get the Client secret
 - Configure .env file with the new values
     ```
