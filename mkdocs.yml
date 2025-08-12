@@ -42,6 +42,7 @@ nav:
     - kubernetes: 'services/kubernetes/index.md'
     - keycloak:
       - portal: 'services/keycloak/portal/portal-keycloak.md'
+      - user federation: 'services/keycloak/user_federation/user_federation.md'
     # - Namespaces: 'services/kubernetes/ns.md'
     - harbor: 'services/harbor/index.md'
   - Deployments:
