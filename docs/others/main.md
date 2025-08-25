@@ -1,6 +1,5 @@
 # Post-Deployment Steps
 
-
 ## 1. Post-Deployment iRODS
 
 ### Gain Access to the Host and Switch to the iRODS Admin User
@@ -48,6 +47,58 @@ To grant the `icat_reader` user the necessary database permissions, run the foll
 ```sql
 --- \c ICAT
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA "public" TO icat_reader;
+```
+
+### Crontab `data-store-fix`
+
+This program fixes the following three common problems that happen when an
+upload fails.
+
+1. The rodsadmin group isn't given own permission on a new collection or data
+   object.
+2. A new collection or data object doesn't receive a UUID.
+3. A checksum isn't computed for a new or modified data object replica.
+
+#### Gain Access to the Host and Switch to the iRODS Admin User
+
+```bash
+ssh <irods_user>@IRODS.HOST
+sudo su - irods
+```
+
+#### Create a directory
+
+```bash
+mkdir -p /var/lib/ds-adm 
+cd /var/lib/ds-adm
+```
+
+#### Clone the script repo
+
+```bash
+git clone https://github.com/cyverse-austria/irods-adm.git
+```
+
+#### Run Manually
+
+```bash
+cd /var/lib/ds-adm/irods-adm
+./data-store-fix  --db-user $ICAT_DB_USER --dbms-host $ICAT_DB_HOST
+```
+
+#### create a **crontab**
+
+Make sure SMTP is enabled.
+
+```bash
+MAILFROM=ds-adm
+MAILTO=root,yourmail@domain.com
+
+PGHOST=ICAT_DB_HOST
+PGUSER=$ICAT_DB_USER
+
+#m h dom mon dow command
+0  1 *   *   *   /var/lib/ds-adm/irods-adm/data-store-fix --db-user $ICAT_DB_USER --dbms-host $ICAT_DB_HOST
 ```
 
 ## 2. Post-Deployment DE(Discovery Environment)
