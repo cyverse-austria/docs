@@ -35,7 +35,7 @@ Ensure the following before running the command:
 Clone the migration repository:
 
 ```bash
-git clone https://github.com/cyverse-austria/portal2.git
+git clone https://github.com/cyverse-de/portal2
 ```
 
 Run the migrations using Docker:
@@ -126,10 +126,10 @@ unzip 30895309
 ```
 
 ##### import to the database
-For imorting this grid file we will use the script from [portal2/scripts/import_grid_institutions.py](https://gitlab.com/cyverse/portal2/-/blob/master/src/scripts/import_grid_institutions.py).
+For imorting this grid file we will use the script from [portal2/scripts/import_grid_institutions.py](https://github.com/cyverse-de/portal2/blob/main/src/scripts/import_grid_institutions.py).
 
 ```bash
-./import_grid_institutions.py --host root@DB_HOST.com --user portal_db_reader --database portal grid.csv
+./import_grid_institutions.py --host DB_HOST --user portal_db_reader --database portal grid.csv
 ```
 
 #### Populate these Tables
