@@ -37,7 +37,7 @@ docker login harbor.<your_domain>
 
 You’ll be prompted for **username** and **password**.
 
-* Username:** Your Harbor username (same as your Keycloak username)
+* **Username:** Your Harbor username (same as your Keycloak username)
 
 * **Password:** Use your CLI secret (not your Keycloak password)
 
