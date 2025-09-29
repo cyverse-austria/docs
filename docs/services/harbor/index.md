@@ -14,8 +14,7 @@ This guide shows you how to get started with Harbor, create your account via SSO
 
 ## 1. Getting a Harbor Account
 
-1. Go to the **Harbor Web Interface**:  
-   [https://harbor.<your_domain>](https://harbor.<your_domain>)
+1. Go to the **Harbor Web Interface**
 
 2. **Log in via SSO** (Keycloak OIDC) using your CyVerse Austria credentials.
 
