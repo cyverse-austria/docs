@@ -1,39 +1,66 @@
-# Harbor
+# Harbor Registry — Push Image Guide
 
-Harbor is an open source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities.
+## Overview
 
-This is a small guide for quick access to harbor docker image storage.
+[Harbor](https://goharbor.io/) is an open-source container registry that provides:
 
-## harbor instance deployment
-TODO
+- **Role-Based Access Control (RBAC)**
+- **Integration with SSO / OIDC** (via Keycloak)
+- **Vulnerability scanning** and secure artifact storage
 
-## harbor account
+This guide shows you how to get started with Harbor, create your account via SSO, and push Docker images to your assigned project.
+
+---
+
+## 1. Getting a Harbor Account
+
+1. Go to the **Harbor Web Interface**:  
+   [https://harbor.<your_domain>](https://harbor.<your_domain>)
+
+2. **Log in via SSO** (Keycloak OIDC) using your CyVerse Austria credentials.
+
 ![sso-account](../assets/sso.png)
-To have a Harbor account created, you need to login via SSO, which in our case is configured through Keycloak-OIDC.
 
-Once you login via SSO, you will have a project and role automatically assigned.
+3. After your first login, your **Harbor account** is automatically provisioned:
+   - You’ll automatically get your designated **role** within that project (e.g. *Developer*, *Maintainer*).
+---
 
+## 2. Docker Login & Using Harbor
 
-## docker login and push
-Once your account is created and configured in a project, you will need to use it to authenticate via docker.
+Once your account is ready, follow these steps to log in and push your images.
 
-```
+### Step 1: Log in via Docker CLI
+
+```bash
 docker login harbor.<your_domain>
 ```
 
-![modal](../assets/user_modal.png)
-After this you will be prompted to enter Username and password. In the **Harbor** browser page go to your user (top right) -> User profile. The password would be the **CLI Secret**. Copy that to clipboard.
+You’ll be prompted for **username** and **password**.
 
-Then:
+* Username:** Your Harbor username (same as your Keycloak username)
 
-```
+* **Password:** Use your CLI secret (not your Keycloak password)
+
+To find your CLI secret:
+
+* Log into the Harbor UI
+
+* Click your **user profile** (top right corner)
+
+* Go to User Profile → **CLI Secret**
+
+* Copy and use it when prompted for your password
+
+
+### Step 2: Tag Your Image
+
+Replace the placeholders with your project and image name:
+
+```bash
 docker tag <your_image> harbor.<your_domain>/<your_project>/<image_name>:<tag>
 ```
 
-```
+### Step 3: Push Your Image
+```bash
 docker push harbor.<your_domain>/<your_project>/<image_name>:<tag>
 ```
-
-Check in the Harbor website whether your image was pushed correctly to the desired project.
-
-**Note**: Additional docs for docker authentication https://docs.docker.com/desktop/setup/sign-in/
