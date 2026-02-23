@@ -45,6 +45,7 @@ In order to avoid the extra verification step that prompts users for their LDAP 
 
 2. **Configure the Flow**:
    - Disable CyVerse specific first broker login Account
+   - Make sure to add the **Automatically set existing user: Required** step inside _Handle existing account_ flow. Add this step by clicking the **+** icon of the _Handle existing account flow_.
    
    ![Screenshot](../images/custom-flow.png)
 
