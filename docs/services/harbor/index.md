@@ -12,15 +12,19 @@ This guide shows you how to get started with Harbor, create your account via SSO
 
 ---
 
+## Network Access
+
+- **URL:** `harbor.<your_domain>` (e.g., `harbor.cyverse.example.org`)
+- **On-site Network:** Harbor is directly accessible if you are connected to your institution's network.
+- **Remote Access:** If you are **not** on the local network, you need to connect via **VPN** first.
+
+---
+
 ## 1. Getting a Harbor Account
 
-1. Go to the **Harbor Web Interface**
+1. Go to the **Harbor Web Interface** at `harbor.<your_domain>` — you will be automatically redirected to log in via SSO (Keycloak OIDC) using your CyVerse Austria credentials.
 
-2. **Log in via SSO** (Keycloak OIDC) using your CyVerse Austria credentials.
-
-![sso-account](../assets/sso.png)
-
-3. After your first login, your **Harbor account** is automatically provisioned:
+2. After your first login, your **Harbor account** is automatically provisioned:
    - You’ll automatically get your designated **role** within that project (e.g. *Developer*, *Maintainer*).
 ---
 
@@ -59,7 +63,22 @@ Replace the placeholders with your project and image name:
 docker tag <your_image> harbor.<your_domain>/<your_project>/<image_name>:<tag>
 ```
 
+!!! note
+    The project name **`discovery`** is a shared project dedicated to **all users**.
+
+**Example:** Tagging and pushing `my-app` to the `discovery` project:
+
+```bash
+docker tag my-app:latest harbor.<your_domain>/discovery/my-app:latest
+```
+
 ### Step 3: Push Your Image
 ```bash
 docker push harbor.<your_domain>/<your_project>/<image_name>:<tag>
+```
+
+**Example:**
+
+```bash
+docker push harbor.<your_domain>/discovery/my-app:latest
 ```
